@@ -1,0 +1,198 @@
+{
+    "factions": [
+        {
+        "id": "ts",
+        "name": "Thousand Sons",
+        "units": [
+            { "id": "ts_ahriman", "name": "Ahriman", "points": 100, "keywords": ["Infantry", "Character", "Psyker", "Chaos", "Tzeentch"], "stats": {} },
+            { "id": "ts_exalted", "name": "Exalted Sorcerer", "points": 80, "keywords": ["Infantry", "Character", "Psyker", "Chaos", "Tzeentch"], "stats": {} },
+            { "id": "ts_inf_master", "name": "Infernal Master", "points": 95, "keywords": ["Infantry", "Character", "Psyker", "Chaos", "Tzeentch"], "stats": {} },
+            { "id": "ts_sorc", "name": "Sorcerer", "points": 80, "keywords": ["Infantry", "Character", "Psyker", "Chaos", "Tzeentch"], "stats": {} },
+            { "id": "ts_term_sorc", "name": "Thousand Sons Sorcerer in Terminator Armour", "points": 85, "keywords": ["Infantry", "Character", "Psyker", "Terminator", "Chaos", "Tzeentch"], "stats": {} },
+            { "id": "ts_rubric", "name": "Rubric Marines", "points": 100, "keywords": ["Infantry", "Battleline", "Psyker", "Chaos", "Tzeentch"], "stats": {} },
+            { "id": "ts_tzaangor", "name": "Tzaangors", "points": 70, "keywords": ["Infantry", "Battleline", "Chaos", "Tzeentch"], "stats": {} },
+            { "id": "ts_sot", "name": "Scarab Occult Terminators", "points": 180, "keywords": ["Infantry", "Terminator", "Psyker", "Chaos", "Tzeentch"], "stats": {} },
+            { "id": "ts_spawn", "name": "Thousand Sons Chaos Spawn", "points": 65, "keywords": ["Beast", "Chaos", "Tzeentch"], "stats": {} }
+        ],
+        "detachments": [
+            {
+            "id": "chosen_cabal",
+            "name": "Chosen Cabal",
+            "flavor_text": "At the command of the Thousand Sons Sorcerers, Rubric Marines and cultist thralls press through the labyrinthine corridors...",
+            "army_rule": {
+                "name": "Twisting Fate",
+                "description": "Units lose Cabal of Sorcerers. Gain Twisting Fate: Roll D6 when Stratagems are used; 1-2 opponent gains 1CP, 6+ you gain 1CP (if Ascendant).",
+                "replaces": "Cabal of Sorcerers"
+            },
+            "detachment_rule": {
+                "name": "Witchsight",
+                "description": "Ranged weapons equipped by THOUSAND SONS models have the [IGNORES COVER] ability."
+            },
+            "mustering_rules": [
+                {
+                "type": "select_up_to_x",
+                "category_name": "Leaders",
+                "limit": 2,
+                "allow_duplicates": false,
+                "allowed_units": ["ts_ahriman", "ts_exalted", "ts_inf_master", "ts_sorc", "ts_term_sorc"],
+                "exclusions": [
+                    { "unit_id": "ts_ahriman", "forbidden_keyword": "Fly" },
+                    { "unit_id": "ts_exalted", "forbidden_keyword": "Fly" },
+                    { "unit_id": "ts_sorc", "forbidden_keyword": "Terminator" }
+                ]
+                },
+                {
+                "type": "select_up_to_x_each",
+                "category_name": "Troops",
+                "limit_per_unit": 3,
+                "allowed_units": ["ts_rubric", "ts_tzaangor"]
+                },
+                {
+                "type": "select_up_to_x_each",
+                "category_name": "Elites & Beasts",
+                "limit_per_unit": 1,
+                "allowed_units": ["ts_sot", "ts_spawn"]
+                },
+                {
+                "type": "dependency_check",
+                "error_message": "Tzaangors total cannot exceed Rubric Marines count.",
+                "dependent_units": ["ts_tzaangor"],
+                "control_unit": "ts_rubric",
+                "logic": "sum(dependent) <= count(control)"
+                }
+            ],
+            "forming_squads": {
+                "cannot_split": ["ts_tzaangor"],
+                "split_penalties": [
+                {
+                    "units": ["ts_rubric", "ts_sot"],
+                    "condition": "no_character_model", 
+                    "lose_keywords": ["Psyker"],
+                    "lose_abilities": ["Psychic Abilities"]
+                }
+                ]
+            },
+            "rules_adaptations": [
+                { "unit_id": "ts_ahriman", "remove_ability": "Arch-Sorcerer of Tzeentch" },
+                { "unit_id": "ts_exalted", "remove_ability": "Rebind Rubricae" },
+                { "unit_id": "ts_spawn", "remove_ability": "Regenerating Monstrosities" },
+                { "unit_id": "ts_tzaangor", "remove_ability": "Relic Hunters" }
+            ],
+            "enhancements": [
+                { "name": "Warp Mastery", "description": "Re-roll number of attacks with a Psychic weapon."},
+                { "name": "Fires of Change", "description": "Select one enemy unit hit by one or more of those attacks made with a Psychic weapon. That unit must take a Battle-shock test, subtracting 1 from the result."}
+            ],
+            "stratagems": [
+                { "name": "Costly Blessing", "cost": 1, "type": "Epic Deed", "description": "3+ Invuln, suffer D3 MW at end of phase." },
+                { "name": "Empyric Desecration", "cost": 1, "type": "Epic Deed", "description": "Deny objective on 2+ within 6\" of this unit." },
+                { "name": "Inferno Bolters", "cost": 1, "type": "Strategic Ploy", "description": "Shoot through closed Hatchway (exclude torrent), targets enemy within 1\", attacks have 0 AP." },
+                { "name": "Tzeentch's Boon", "cost": 1, "type": "Battle Tactic", "description": "Re-roll Wound roll for Psychic Attack." }
+            ]
+            },
+            {
+            "id": "devoted_thralls",
+            "name": "Devoted Thralls",
+            "flavor_text": "Having boarded by deceit and infiltration or through conjured warp portals, the mortal cultists of Tzeentch surge through the vessels...",
+            "army_rule": {
+                "name": "Twisting Fate",
+                "description": "Units lose Cabal of Sorcerers. Gain Twisting Fate: Roll D6 when Stratagems are used; 1-2 opponent gains 1CP, 6+ you gain 1CP (if Ascendant).",
+                "replaces": "Cabal of Sorcerers"
+            },
+            "detachment_rule": {
+                "name": "Fervent Devotees",
+                "description": "Melee weapons equipped by THOUSAND SONS models from your army have the [SUSTAINED HITS 1] ability while targeting an enemy unit within range of an objective marker."
+            },
+            "mustering_rules": [
+                {
+                "type": "select_up_to_x",
+                "category_name": "Leaders",
+                "limit": 2,
+                "allow_duplicates": false,
+                "allowed_units": ["ts_exalted", "ts_inf_master", "ts_sorc"],
+                "exclusions": [
+                    { "unit_id": "ts_exalted", "forbidden_keyword": "Fly" },
+                    { "unit_id": "ts_sorc", "forbidden_keyword": "Terminator" }
+                ]
+                },
+                {
+                "type": "select_up_to_x_each",
+                "category_name": "Troops",
+                "limit_per_unit": 3,
+                "allowed_units": ["ts_tzaangor"]
+                },
+                {
+                "type": "select_up_to_x_each",
+                "category_name": "Elites & Beasts",
+                "limit_per_unit": 1,
+                "allowed_units": ["ts_spawn"]
+                }
+            ],
+            "rules_adaptations": [
+                { "unit_id": "ts_exalted", "remove_ability": "Rebind Rubricae" },
+                { "unit_id": "ts_spawn", "remove_ability": "Regenerating Monstrosities" },
+                { "unit_id": "ts_tzaangor", "remove_ability": "Relic Hunters" }
+            ],
+            "enhancements": [
+                { "name": "Thrallmaster", "description": "At the start of the first battle round, you can select one friendly TZAANGORS unit within the same Entry Zone as the bearer. If you do, that unit can make a Normal move of up to 6\""},
+                { "name": "Prescient Authority", "description": "Once per turn, when a friendly TZAANGORS unit within 3\" of the bearer is selected to shoot or fight, the bearer can use this Enhancement. If it does, until the end of the phase, each time a model in that TZAANGORS unit makes an attack, re-roll a Wound roll of 1."}
+            ],
+            "stratagems": [
+                { "name": "Psychic Ingress", "cost": 1, "type": "Epic Deed", "description": "Open every hatchway within 3\"" },
+                { "name": "Flesh Change", "cost": 1, "type": "Battle Tactic", "description": "Unit has Feel no Pain 5+" },
+                { "name": "Fell Sacrifice", "cost": 1, "type": "Strategic Ploy", "description": "1 enemy unit below starting strength & within engagement range, unit must take battle-shock test. If below half-strength, -1 to test." },
+                { "name": "Bestial Surge", "cost": 1, "type": "Strategic Ploy", "description": "Unit can move up to D6, as close as possible, towards attacking unit. Can be moved within engagement range of that unit." }
+            ]
+            },
+            {
+            "id": "fateseekers",
+            "name": "Fateseekers",
+            "flavor_text": "Amidst the twisting corridors of voidships, upon the strange tides of the warp, many esoteric and powerful prizes wait to be claimed...",
+            "army_rule": {
+                "name": "Twisting Fate",
+                "description": "Units lose Cabal of Sorcerers. Gain Twisting Fate: Roll D6 when Stratagems are used; 1-2 opponent gains 1CP, 6+ you gain 1CP (if Ascendant).",
+                "replaces": "Cabal of Sorcerers"
+            },
+            "detachment_rule": {
+                "name": "Methodical Conquest",
+                "description": "Each time a THOUSAND SONS model from your army makes an attack while firing Overwatch, an unmodified Hit roll of 5+ is required to score a hit, instead of an unmodified 6. In addition, SCARAB OCCULT TERMINATORS units from your army can perform the Set Overwatch Tactical Maneuver in the same turn as performing the Secure Site Tactical Maneuver."
+            },
+            "mustering_rules": [
+                {
+                "type": "select_up_to_x",
+                "category_name": "Leaders",
+                "limit": 2,
+                "allow_duplicates": false,
+                "allowed_units": ["ts_ahriman", "ts_exalted", "ts_inf_master", "ts_term_sorc"],
+                "exclusions": [
+                    { "unit_id": "ts_ahriman", "forbidden_keyword": "Fly" },
+                    { "unit_id": "ts_exalted", "forbidden_keyword": "Fly" }
+                ]
+                },
+                {
+                "type": "select_up_to_x_each",
+                "category_name": "Troops",
+                "limit_per_unit": 2,
+                "allowed_units": ["ts_sot", "ts_spawn"]
+                }
+            ],
+            "rules_adaptations": [
+                { "unit_id": "ts_ahriman", "remove_ability": "Arch-Sorcerer of Tzeentch"  },
+                { "unit_id": "ts_exalted", "remove_ability": "Rebind Rubricae" },
+                { "unit_id": "ts_spawn", "remove_ability": "Regenerating Monstrosities" },
+                { "unit_id": "ts_sot", "gain_ability": "can perform the Secure Site Tactical Manoeuvre as if they had the BATTLELINE keyword." }
+            ],
+            "enhancements": [
+                { "name": "Predestined Champion", "description": "While the bearer is on the battlefield, you are considered to control one additional objective marker for the purposes of the Twisting Fate army rule."},
+                { "name": "Astral Predation", "description": "Once per battle, in your Movement phase, when the bearer is selected to move, it can use this Enhancement. If it does, select one closed Hatchway on the battlefield. Until the end of the phase, the bearer can move through that Hatchway as if it was open (note that this does not open that Hatchway - it remains closed)."}
+            ],
+            "stratagems": [
+                { "name": "Enduring Animus", "cost": 1, "type": "Strategic Ploy", "description": "Each time a model in your unit is destroyed, if it hasn't fought yet, roll one D6. On a 4+ it can fight on death." },
+                { "name": "Strategic Vision", "cost": 1, "type": "Strategic Ploy", "description": "Ranged weapons in this unit have the [PISTOL] ability. And models in your unit can target enemy units outside of Engagement Range." },
+                { "name": "Phantasmic Munitions", "cost": 1, "type": "Strategic Ploy", "description": "Until the end of the phase, models in your unit can ignore enemy models for the purposes of determining visibility." },
+                { "name": "Invisible Assailants", "cost": 1, "type": "Strategic Ploy", "description": "Select one enemy unit visible to your model. That unit must take a Leadership test, subtracting 1 from the result: if failed, until the start of your opponents next Movement phase, subtract 2\" from the Move characteristic of models in that unit and subtract 2 from Advance and Charge rolls made for it; if passed, subtract 1\" from the Move characteristic of models in that unit and subtract 1 from Advance and Charge rolls made for it." }
+            ]
+            }
+        ]
+        }
+    ]
+}
