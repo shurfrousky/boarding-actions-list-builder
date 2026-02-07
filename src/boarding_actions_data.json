@@ -83,10 +83,10 @@
                 { "name": "Fires of Change", "description": "Select one enemy unit hit by one or more of those attacks made with a Psychic weapon. That unit must take a Battle-shock test, subtracting 1 from the result."}
             ],
             "stratagems": [
-                { "name": "Costly Blessing", "cost": 1, "type": "Epic Deed", "description": "3+ Invuln, suffer D3 MW at end of phase." },
-                { "name": "Empyric Desecration", "cost": 1, "type": "Epic Deed", "description": "Deny objective on 2+ within 6\" of this unit." },
-                { "name": "Inferno Bolters", "cost": 1, "type": "Strategic Ploy", "description": "Shoot through closed Hatchway (exclude torrent), targets enemy within 1\", attacks have 0 AP." },
-                { "name": "Tzeentch's Boon", "cost": 1, "type": "Battle Tactic", "description": "Re-roll Wound roll for Psychic Attack." }
+                { "name": "Costly Blessing", "cost": 1, "description": "3+ Invuln, suffer D3 MW at end of phase." },
+                { "name": "Empyric Desecration", "cost": 1, "description": "Deny objective on 2+ within 6\" of this unit." },
+                { "name": "Inferno Bolters", "cost": 1, "description": "Shoot through closed Hatchway (exclude torrent), targets enemy within 1\", attacks have 0 AP." },
+                { "name": "Tzeentch's Boon", "cost": 1, "description": "Re-roll Wound roll for Psychic Attack." }
             ]
             },
             {
@@ -137,10 +137,10 @@
                 { "name": "Prescient Authority", "description": "Once per turn, when a friendly TZAANGORS unit within 3\" of the bearer is selected to shoot or fight, the bearer can use this Enhancement. If it does, until the end of the phase, each time a model in that TZAANGORS unit makes an attack, re-roll a Wound roll of 1."}
             ],
             "stratagems": [
-                { "name": "Psychic Ingress", "cost": 1, "type": "Epic Deed", "description": "Open every hatchway within 3\"" },
-                { "name": "Flesh Change", "cost": 1, "type": "Battle Tactic", "description": "Unit has Feel no Pain 5+" },
-                { "name": "Fell Sacrifice", "cost": 1, "type": "Strategic Ploy", "description": "1 enemy unit below starting strength & within engagement range, unit must take battle-shock test. If below half-strength, -1 to test." },
-                { "name": "Bestial Surge", "cost": 1, "type": "Strategic Ploy", "description": "Unit can move up to D6, as close as possible, towards attacking unit. Can be moved within engagement range of that unit." }
+                { "name": "Psychic Ingress", "cost": 1, "description": "Open every hatchway within 3\"" },
+                { "name": "Flesh Change", "cost": 1, "description": "Unit has Feel no Pain 5+" },
+                { "name": "Fell Sacrifice", "cost": 1, "description": "1 enemy unit below starting strength & within engagement range, unit must take battle-shock test. If below half-strength, -1 to test." },
+                { "name": "Bestial Surge", "cost": 1, "description": "Unit can move up to D6, as close as possible, towards attacking unit. Can be moved within engagement range of that unit." }
             ]
             },
             {
@@ -186,10 +186,10 @@
                 { "name": "Astral Predation", "description": "Once per battle, in your Movement phase, when the bearer is selected to move, it can use this Enhancement. If it does, select one closed Hatchway on the battlefield. Until the end of the phase, the bearer can move through that Hatchway as if it was open (note that this does not open that Hatchway - it remains closed)."}
             ],
             "stratagems": [
-                { "name": "Enduring Animus", "cost": 1, "type": "Strategic Ploy", "description": "Each time a model in your unit is destroyed, if it hasn't fought yet, roll one D6. On a 4+ it can fight on death." },
-                { "name": "Strategic Vision", "cost": 1, "type": "Strategic Ploy", "description": "Ranged weapons in this unit have the [PISTOL] ability. And models in your unit can target enemy units outside of Engagement Range." },
-                { "name": "Phantasmic Munitions", "cost": 1, "type": "Strategic Ploy", "description": "Until the end of the phase, models in your unit can ignore enemy models for the purposes of determining visibility." },
-                { "name": "Invisible Assailants", "cost": 1, "type": "Strategic Ploy", "description": "Select one enemy unit visible to your model. That unit must take a Leadership test, subtracting 1 from the result: if failed, until the start of your opponents next Movement phase, subtract 2\" from the Move characteristic of models in that unit and subtract 2 from Advance and Charge rolls made for it; if passed, subtract 1\" from the Move characteristic of models in that unit and subtract 1 from Advance and Charge rolls made for it." }
+                { "name": "Enduring Animus", "cost": 1, "description": "Each time a model in your unit is destroyed, if it hasn't fought yet, roll one D6. On a 4+ it can fight on death." },
+                { "name": "Strategic Vision", "cost": 1,  "description": "Ranged weapons in this unit have the [PISTOL] ability. And models in your unit can target enemy units outside of Engagement Range." },
+                { "name": "Phantasmic Munitions", "cost": 1, "description": "Until the end of the phase, models in your unit can ignore enemy models for the purposes of determining visibility." },
+                { "name": "Invisible Assailants", "cost": 1, "description": "Select one enemy unit visible to your model. That unit must take a Leadership test, subtracting 1 from the result: if failed, until the start of your opponents next Movement phase, subtract 2\" from the Move characteristic of models in that unit and subtract 2 from Advance and Charge rolls made for it; if passed, subtract 1\" from the Move characteristic of models in that unit and subtract 1 from Advance and Charge rolls made for it." }
             ]
             }
         ]

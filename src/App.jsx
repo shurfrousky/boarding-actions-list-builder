@@ -7,6 +7,9 @@ export default function App() {
     const [selectedFactionId, setSelectedFactionId] = useState(""); 
     const [selectedDetachmentId, setSelectedDetachmentId] = useState("");
 
+    // toggle rules popup
+    const [showRules, setShowRules] = useState(false);
+
     // The "Roster" is the list of units user has added
     const [roster, setRoster] = useState([]);
 
@@ -108,7 +111,7 @@ export default function App() {
             </header>
 
             {/* SELECTORS */}
-            <section className="selectors" style={{ display: 'flex', gap: '20px', marginBottom: '20px' }}>
+            <section className="selectors" style={{ display: 'flex', gap: '20px', marginBottom: '20px', alignItems: 'flex-end' }}>
                 <div>
                     <label style={{ display: 'block', fontWeight: 'bold' }}>Faction</label>
                     <select 
@@ -134,7 +137,74 @@ export default function App() {
                     </select>
                 </div>
                 )}
+
+                {/* View Rules Button */}
+                {currentDetachment && (
+                    <button 
+                        onClick={() => setShowRules(true)}
+                        style={{ padding: '8px 16px', background: '#6f42c1', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', height: '36px'}}
+                    >
+                        📖 View Rules
+                    </button>
+                )}
             </section>
+
+            {/* The Rules Modal Overlay */}
+            {showRules && currentDetachment && (
+                <div style={{
+                    position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.57)', zIndex: 1000,
+                    display: 'flex', justifyContent: 'center', alignItems: 'center'
+                }}>
+                    <div style={{
+                        background: 'rgb(44, 140, 230)', padding: '20px', borderRadius: '8px',
+                        width: '90%', maxWidth: '800px', maxHeight: '90vh', overflowY: 'auto',
+                        position: 'relative'
+                    }}>
+                        <button 
+                            onClick={() => setShowRules(false)}
+                            style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '1.5em', background: 'none', border: 'none', cursor: 'pointer' }}
+                        >
+                            ✖
+                        </button>
+                        
+                        <h2 style={{ borderBottom: '2px solid #2b076d', paddingBottom: '10px' }}>{currentDetachment.name} Reference</h2>
+                        
+                        {/* Detachment Rule */}
+                        <div style={{ marginBottom: '20px', background: '#2b076d', padding: '10px', borderRadius: '5px' }}>
+                            <h3 style={{ marginTop: 0 }}>Detachment Rule: {currentDetachment.detachment_rule.name}</h3>
+                            <p>{currentDetachment.detachment_rule.description}</p>
+                        </div>
+
+                        {/* Enhancements */}
+                        <div style={{ marginBottom: '20px', background: '#2b076d' }}>
+                            <h3>Enhancements</h3>
+                            {currentDetachment.enhancements.map((enh, idx) => (
+                                <div key={idx} style={{ marginBottom: '10px', paddingLeft: '10px' }}>
+                                    <strong>{enh.name}:</strong> {enh.description}
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Stratagems */}
+                        <div style={{background: '#2b076d'}}>
+                            <h3>Stratagems</h3>
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                                {currentDetachment.stratagems.map((strat, idx) => (
+                                    <div key={idx} style={{ border: '1px solid #ccc', padding: '10px', borderRadius: '5px' }}>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', marginBottom: '5px' }}>
+                                            <span>{strat.name}</span>
+                                            <span style={{ background: '#333', color: 'white', padding: '2px 6px', borderRadius: '3px', fontSize: '0.8em' }}>{strat.cost}CP</span>
+                                        </div>
+                                        <div style={{ fontSize: '0.9em' }}>{strat.description}</div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            )}
 
             {/* MAIN CONTENT COLUMNS */}
             {currentDetachment && (
@@ -207,7 +277,6 @@ export default function App() {
                             </div>
                         ))}
                     </div> 
-                    {/* ^^^ THIS CLOSING DIV WAS MISSING BEFORE! ^^^ */}
 
                     {/* RIGHT COLUMN: MY ROSTER */}
                     <div style={{ flex: 1, background: '#666666ff', padding: '15px', borderRadius: '8px', border: '1px solid #9e9e9eff' }}>
