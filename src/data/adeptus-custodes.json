@@ -1,0 +1,193 @@
+{
+    "id": "adeptus-custodes",
+    "name": "Adeptus Custodes",
+    "units": [
+        { "id": "ac_blade_champ", "name": "Blade Champion", "points": 110, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "ac_shield_cap", "name": "Infantry Shield-Captain", "points": 105, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "ac_trajann", "name": "Trajann Valoris", "points": 160, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "ac_valerian", "name": "Valerian", "points": 105, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "ac_custodian_guard", "name": "Custodian Guard", "points": 200, "keywords": ["Infantry", "Battleline", "Imperium"], "stats": {} },
+        { "id": "ac_allarus", "name": "Allarus Custodians", "points": 150, "keywords": ["Infantry", "Terminator", "Imperium"], "stats": {} },
+        { "id": "ac_wardens", "name": "Custodian Wardens", "points": 210, "keywords": ["Infantry", "Imperium"], "stats": {} },
+        { "id": "ac_prosecutors", "name": "Prosecutors", "points": 60, "keywords": ["Infantry", "Anathema Psykana", "Imperium"], "stats": {} },
+        { "id": "ac_vigilators", "name": "Vigilators", "points": 65, "keywords": ["Infantry", "Anathema Psykana", "Imperium"], "stats": {} },
+        { "id": "ac_witchseekers", "name": "Witchseekers", "points": 70, "keywords": ["Infantry", "Anathema Psykana", "Imperium"], "stats": {} },
+        { "id": "ac_aleya", "name": "Aleya", "points": 75, "keywords": ["Infantry", "Character", "Anathema Psykana", "Imperium"], "stats": {} },
+        { "id": "ac_knight_centura", "name": "Knight-Centura", "points": 65, "keywords": ["Infantry", "Character", "Anathema Psykana", "Imperium"], "stats": {} }
+    ],
+    "detachments": [
+        {
+            "id": "voyagers-in-darkness",
+            "name": "Voyagers in Darkness",
+            "flavor_text": "Some shield companies of the Adeptus Custodes set sail into the darkness between the stars, either guided by visions of the Emperor's will or believing that they can do the most to defend Terra by seeking out and destroying distant threats.",
+            "army_rule": {
+                "name": "Focused Ka'tah",
+                "description": "Units from your army with the Martial Ka'tah ability retain that ability and gain this one. However, you no longer select a Ka'tah Stance each time a unit with the Martial Ka'tah ability is selected to fight. Instead, at the start of the Fight phase, you can select one Ka'tah Stance. Until the end of the phase, the selected Stance is active for your army and units from your army with the Martial Ka'tah ability gain the relevant ability. Each Ka'tah Stance can only be selected once per battle.",
+                "replaces": "Martial Ka'tah"
+            },
+            "detachment_rule": {
+                "name": "Overwhelming Magnificence",
+                "description": "While an enemy unit is within Engagement Range of one or more ADEPTUS CUSTODES units from your army, subtract 1 from the Objective Control characteristic of models in that enemy unit."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders",
+                    "limit": 2,
+                    "allow_duplicates": false,
+                    "allowed_units": ["ac_blade_champ", "ac_shield_cap", "ac_trajann", "ac_valerian"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Troops - Custodian Guard",
+                    "limit_per_unit": 3,
+                    "allowed_units": ["ac_custodian_guard"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Elites",
+                    "limit_per_unit": 1,
+                    "allowed_units": ["ac_allarus", "ac_wardens"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Anathema Psykana",
+                    "limit_per_unit": 1,
+                    "allowed_units": ["ac_prosecutors", "ac_vigilators", "ac_witchseekers"]
+                },
+                {
+                    "type": "dependency_check",
+                    "error_message": "Total PROSECUTORS, VIGILATORS, and WITCHSEEKERS units cannot exceed total ALLARUS CUSTODIANS, CUSTODIAN GUARD, and CUSTODIAN WARDEN units.",
+                    "dependent_units": ["ac_prosecutors", "ac_vigilators", "ac_witchseekers"],
+                    "control_unit": ["ac_allarus", "ac_custodian_guard", "ac_wardens"],
+                    "logic": "count(dependent) <= count(control)"
+                }
+            ],
+            "forming_squads": {
+                "cannot_split": [],
+                "split_penalties": []
+            },
+            "rules_adaptations": [
+                { "unit_id": "all_adeptus_custodes", "remove_ability": "Cannot perform the Secure Site Tactical Manoeuvre" },
+                { "unit_id": "ac_allarus", "remove_ability": "From Golden Light" },
+                { "unit_id": "ac_blade_champ", "remove_ability": "Martial Inspiration" },
+                { "unit_id": "ac_shield_cap", "remove_ability": "Master of the Stances" }
+            ],
+            "enhancements": [
+                { 
+                    "name": "Voidstrider", 
+                    "description": "Add 2\" to the bearer's Move characteristic."
+                },
+                { 
+                    "name": "Mantle of the Emissary", 
+                    "description": "The bearer has an Objective Control characteristic of 5."
+                }
+            ],
+            "stratagems": [
+                { 
+                    "name": "Inescapable Vengeance", 
+                    "cost": 1, 
+                    "description": "Your Movement phase. Until the end of the phase, each time a model in your unit makes a Pile-in or Consolidation move, it can ignore Walls and other models for the purposes of determining which enemy units are visible to its own."
+                },
+                { 
+                    "name": "Breaching Behemoths", 
+                    "cost": 1, 
+                    "description": "Your Movement phase. Until the end of the phase, each time your unit makes a Normal, Advance or Fall Back move, models in your unit can move through other models as if they were not there. In addition, any Desperate Escape tests taken for models in your unit are automatically passed."
+                },
+                { 
+                    "name": "Artificer Rounds", 
+                    "cost": 1, 
+                    "description": "Your Shooting phase. Until the end of the phase, ranged weapons equipped by models in your unit (excluding ballistus grenade launchers) have the [SUSTAINED HITS 1] ability while targeting units within 6\"."
+                },
+                { 
+                    "name": "Auric Storm", 
+                    "cost": 1, 
+                    "description": "Your Charge phase, just after an ALLARUS CUSTODIANS unit from your army ends a Charge move. Each enemy unit within Engagement Range of your unit must take a Battle-shock test, subtracting 1 from the result."
+                }
+            ]
+        },
+        {
+            "id": "black-ship-guardians",
+            "name": "Black Ship Guardians",
+            "flavor_text": "Whether fighting furiously to prevent enemies from boarding one of the sinister Black Ships and freeing its psyker inmates, or sweeping into an enemy vessel or installation to seize and imprison powerful witches, the Sisters of Silence are a force to be reckoned with in void warfare.",
+            "army_rule": {
+                "name": "Focused Ka'tah",
+                "description": "Units from your army with the Martial Ka'tah ability retain that ability and gain this one. However, you no longer select a Ka'tah Stance each time a unit with the Martial Ka'tah ability is selected to fight. Instead, at the start of the Fight phase, you can select one Ka'tah Stance. Until the end of the phase, the selected Stance is active for your army and units from your army with the Martial Ka'tah ability gain the relevant ability. Each Ka'tah Stance can only be selected once per battle.",
+                "replaces": "Martial Ka'tah"
+            },
+            "detachment_rule": {
+                "name": "Priority Quarry",
+                "description": "At the start of the first battle round, you can select up to two enemy units to be your army's quarry, one of which must be your opponents WARLORD. Each time an ANATHEMA PSYKANA unit from your army makes an attack that targets one of your army's quarries, re-roll a Hit roll of 1. Each time an ANATHEMA PSYKANA unit from your army declares a charge, it can include one or more of your army's quarries as targets of that charge, even if they are not visible to it."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders - Sisters of Silence",
+                    "limit": 2,
+                    "allow_duplicates": false,
+                    "allowed_units": ["ac_aleya", "ac_knight_centura"]
+                },
+                {
+                    "type": "conditional_select",
+                    "category_name": "Optional Custodes Leader",
+                    "limit": 1,
+                    "condition": "If you include only one other CHARACTER unit",
+                    "allowed_units": ["ac_shield_cap", "ac_valerian"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Troops",
+                    "limit_per_unit": 3,
+                    "allowed_units": ["ac_prosecutors", "ac_vigilators"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Elites",
+                    "limit_per_unit": 1,
+                    "allowed_units": ["ac_witchseekers"]
+                }
+            ],
+            "forming_squads": {
+                "cannot_split": [],
+                "split_penalties": []
+            },
+            "rules_adaptations": [
+                { "unit_id": "ac_shield_cap", "remove_ability": "Master of the Stances" }
+            ],
+            "enhancements": [
+                { 
+                    "name": "The Vratine Aquila",
+                    "aura": true,
+                    "description": "ANATHEMA PSYKANA model only. While a friendly ANATHEMA PSYKANA unit is within 3\" of the bearer, models in that unit have a 4+ invulnerable save."
+                },
+                { 
+                    "name": "Sinister Presence",
+                    "aura": true,
+                    "description": "ANATHEMA PSYKANA model only. While an enemy unit is within 6\" of the bearer (when measuring this distance, Walls and closed Hatchways are ignored), that unit cannot Seize objective markers and, in your opponent's Command phase, that unit must take a Battle-shock test. This Enhancement cannot cause a unit to take two Battle-shock tests in the same phase."
+                }
+            ],
+            "stratagems": [
+                { 
+                    "name": "Blades of the Vigilators", 
+                    "cost": 1, 
+                    "description": "Fight phase, just after an enemy unit has selected its targets. Target one VIGILATORS, ALEYA or KNIGHT-CENTURA equipped with an executioner greatblade unit. Until the end of the phase, each time an attack targets your unit, subtract 1 from the Wound roll."
+                },
+                { 
+                    "name": "Focused Fear", 
+                    "cost": 1, 
+                    "description": "Your opponent's Shooting phase or the Fight phase, just after an enemy unit has selected its targets. Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1."
+                },
+                { 
+                    "name": "Cornered Prey", 
+                    "cost": 1, 
+                    "description": "Your Movement phase, just after an ANATHEMA PSYKANA unit from your army Falls Back. Until the end of the turn, your unit is eligible to shoot and declare a charge in a turn in which it Fell Back."
+                },
+                { 
+                    "name": "Punishment of the Prosecutors", 
+                    "cost": 1, 
+                    "description": "Your Shooting phase. Until the end of the phase, improve the Armour Penetration characteristic of ranged weapons equipped by models in your unit by 1. In addition, each time a model in your unit makes a ranged attack, on a Critical Wound, improve the Armour Penetration characteristic of that attack by an additional 1."
+                }
+            ]
+        }
+    ]
+}

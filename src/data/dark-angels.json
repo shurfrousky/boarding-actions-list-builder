@@ -1,0 +1,172 @@
+{
+    "id": "dark-angels",
+    "name": "Dark Angels",
+    "units": [
+        { "id": "sm_captain", "name": "Captain", "points": 80, "keywords": ["Infantry", "Character", "Imperium", "Captain"], "stats": {} },
+        { "id": "da_lion", "name": "Lion El'Jonson", "points": 300, "keywords": ["Monster", "Character", "Epic Hero", "Imperium", "Primarch"], "stats": {} },
+        { "id": "da_belial", "name": "Belial", "points": 85, "keywords": ["Infantry", "Character", "Epic Hero", "Imperium", "Terminator", "Captain"], "stats": {} },
+        { "id": "da_inner_circle", "name": "Inner Circle Companions", "points": 90, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "da_deathwing_knights", "name": "Deathwing Knights", "points": 235, "keywords": ["Infantry", "Terminator", "Imperium"], "stats": {} },
+        { "id": "da_deathwing_term", "name": "Deathwing Terminator Squad", "points": 190, "keywords": ["Infantry", "Terminator", "Imperium"], "stats": {} },
+        { "id": "sm_intercessor", "name": "Intercessor Squad", "points": 80, "keywords": ["Infantry", "Battleline", "Imperium"], "stats": {} },
+        { "id": "sm_assault_int", "name": "Assault Intercessor Squad", "points": 75, "keywords": ["Infantry", "Battleline", "Imperium"], "stats": {} },
+        { "id": "sm_bladeguard", "name": "Bladeguard Veteran Squad", "points": 90, "keywords": ["Infantry", "Imperium"], "stats": {} },
+        { "id": "sm_aggressor", "name": "Aggressor Squad", "points": 120, "keywords": ["Infantry", "Imperium"], "stats": {} },
+        { "id": "sm_infernus", "name": "Infernus Squad", "points": 80, "keywords": ["Infantry", "Imperium"], "stats": {} },
+        { "id": "sm_sternguard", "name": "Sternguard Veteran Squad", "points": 90, "keywords": ["Infantry", "Imperium"], "stats": {} },
+        { "id": "sm_hellblaster", "name": "Hellblaster Squad", "points": 115, "keywords": ["Infantry", "Imperium"], "stats": {} },
+        { "id": "sm_eradicator", "name": "Eradicator Squad", "points": 95, "keywords": ["Infantry", "Imperium"], "stats": {} },
+        { "id": "sm_phobos_captain", "name": "Captain in Phobos Armour", "points": 80, "keywords": ["Infantry", "Character", "Phobos", "Imperium"], "stats": {} },
+        { "id": "sm_phobos_librarian", "name": "Librarian in Phobos Armour", "points": 70, "keywords": ["Infantry", "Character", "Phobos", "Psyker", "Imperium"], "stats": {} },
+        { "id": "sm_incursor", "name": "Incursor Squad", "points": 80, "keywords": ["Infantry", "Phobos", "Imperium"], "stats": {} },
+        { "id": "sm_infiltrator", "name": "Infiltrator Squad", "points": 100, "keywords": ["Infantry", "Phobos", "Imperium"], "stats": {} },
+        { "id": "sm_reiver", "name": "Reiver Squad", "points": 85, "keywords": ["Infantry", "Phobos", "Imperium"], "stats": {} },
+        { "id": "sm_term_captain", "name": "Captain in Terminator Armour", "points": 95, "keywords": ["Infantry", "Character", "Terminator", "Imperium"], "stats": {} },
+        { "id": "sm_term_squad", "name": "Terminator Squad", "points": 175, "keywords": ["Infantry", "Terminator", "Imperium"], "stats": {} },
+        { "id": "sm_term_assault", "name": "Terminator Assault Squad", "points": 185, "keywords": ["Infantry", "Terminator", "Imperium"], "stats": {} }
+    ],
+    "detachments": [
+        {
+            "id": "boarding_strike",
+            "name": "Boarding Strike",
+            "flavor_text": "Space Marines excel in the sort of fast-paced, ferociously violent battles that erupt during voidship boarding assaults.",
+            "army_rule": {
+                "name": "Oath of Moment",
+                "description": "Select one unit to re-roll Hit rolls against.",
+                "replaces": "Standard Oath"
+            },
+            "detachment_rule": {
+                "name": "Drive Home the Blade",
+                "description": "Each time a unit shoots, if within 1 inch of an open Hatchway and every model is on same side, select enemy on opposite side. Weapons gain [SUSTAINED HITS 1] vs that enemy."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders",
+                    "limit": 2,
+                    "allowed_units": ["sm_captain", "da_lion"],
+                    "exclusions": [
+                        { "unit_id": "sm_captain", "forbidden_keyword": "Terminator" }
+                    ]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Troops & Battleline",
+                    "limit_per_unit": 3,
+                    "allowed_units": ["sm_intercessor", "sm_assault_int"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Elites",
+                    "limit_per_unit": 1,
+                    "allowed_units": ["da_inner_circle", "sm_bladeguard", "sm_aggressor", "sm_infernus", "sm_sternguard"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Heavy Support",
+                    "limit_per_unit": 1,
+                    "allowed_units": ["sm_hellblaster", "sm_eradicator"]
+                }
+            ],
+            "rules_adaptations": [
+                { "unit_id": "sm_intercessor", "remove_ability": "Objective Secured" }
+            ],
+            "enhancements": [
+                { "name": "Adamantine Mantle", "description": "Subtract 1 from Damage characteristic of attacks allocated to bearer." },
+                { "name": "Clavitine Reliquary", "description": "In Movement phase, if within 1 inch of Hatchway, can operate it. Can only operate once per turn." }
+            ],
+            "stratagems": [
+                { "name": "In The Emperor's Name", "cost": 1, "description": "Target Battleline unit gains Feel No Pain 5+." },
+                { "name": "Ceramite Bulwark", "cost": 1, "description": "Add 1 to Attacks and Strength of melee weapons. Must target enemy on opposite side of Hatchway." },
+                { "name": "Duty and Defiance", "cost": 1, "description": "Fight on Death on a 4+ (add +1 to roll if Battleline)." },
+                { "name": "Vox-Amplified Roar", "cost": 1, "description": "Charge target must take Battle-shock test." }
+            ]
+        },
+        {
+            "id": "pilum_strike",
+            "name": "Pilum Strike Team",
+            "flavor_text": "Phobos-armoured Space Marines wage a terror campaign to destabilise the target vessel from within.",
+            "army_rule": {
+                "name": "Oath of Moment",
+                "description": "Select one unit to re-roll Hit rolls against.",
+                "replaces": "Standard Oath"
+            },
+            "detachment_rule": {
+                "name": "Relentless Salvoes",
+                "description": "Units are eligible to shoot in a turn in which they Advanced or Fell Back."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Phobos Leaders",
+                    "limit": 3,
+                    "allowed_units": ["sm_phobos_captain", "sm_phobos_librarian"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Phobos Troops",
+                    "limit_per_unit": 3,
+                    "allowed_units": ["sm_incursor", "sm_infiltrator", "sm_reiver"]
+                }
+            ],
+            "rules_adaptations": [
+                { "unit_id": "sm_incursor", "gain_ability": "Secure Site as if Battleline" },
+                { "unit_id": "sm_infiltrator", "gain_ability": "Secure Site as if Battleline" },
+                { "unit_id": "sm_incursor", "remove_ability": "Haywire Mine" }
+            ],
+            "enhancements": [
+                { "name": "Omni-Structural Auspex", "description": "After shooting, select enemy unit hit. Friendly models improve AP by 1 vs that unit." },
+                { "name": "Void Warrior", "description": "Re-roll Advance and Charge rolls. Can charge in a turn in which it Advanced." }
+            ],
+            "stratagems": [
+                { "name": "Knife Work", "cost": 1, "description": "Improve Strength and AP of melee weapons by 1." },
+                { "name": "Enhanced Efficiency", "cost": 1, "description": "Can operate a Hatchway during a Normal or Advance move." },
+                { "name": "Fighting Retreat", "cost": 1, "description": "When Falling Back, enemy in Engagement Range suffers D3 mortals (2-4=1MW, 5+=2MW)." },
+                { "name": "Master Marksmen", "cost": 1, "description": "Ranged weapons have [DEVASTATING WOUNDS]." }
+            ]
+        },
+        {
+            "id": "terminator_assault",
+            "name": "Terminator Assault",
+            "flavor_text": "The Imperium has no finer warriors for cleansing the claustrophobic decks of voidships than Terminators.",
+            "army_rule": {
+                "name": "Oath of Moment",
+                "description": "Select one unit to re-roll Hit rolls against.",
+                "replaces": "Standard Oath"
+            },
+            "detachment_rule": {
+                "name": "Sacred Oath",
+                "description": "Once per battle, select Oath target. Until next Command phase, re-roll Wound rolls vs that target."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Terminator Leaders",
+                    "limit": 2,
+                    "allowed_units": ["da_belial", "sm_term_captain"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Terminator Squads",
+                    "limit_per_unit": 2,
+                    "allowed_units": ["da_deathwing_knights", "da_deathwing_term", "sm_term_squad", "sm_term_assault"]
+                }
+            ],
+            "rules_adaptations": [
+                { "unit_id": "sm_term_squad", "gain_ability": "Secure Site as if Battleline" },
+                { "unit_id": "da_belial", "remove_ability": "Strikes of Retribution" },
+                { "unit_id": "da_deathwing_knights", "remove_ability": "Inner Circle" }
+            ],
+            "enhancements": [
+                { "name": "Seal of Indomitability", "description": "Once per battle, bearer has 3+ Invulnerable save for the phase." },
+                { "name": "Resolute", "description": "Can charge after Falling Back. Auto-pass Desperate Escape. Move through enemies when Falling Back." }
+            ],
+            "stratagems": [
+                { "name": "Tower of Strength", "cost": 1, "description": "Add 1 to OC of unit until next Command Phase." },
+                { "name": "Focusing Shrine", "cost": 1, "description": "Deep Strike > 6 inches away (ignoring walls) for Reinforcements." },
+                { "name": "Carve a Path", "cost": 1, "description": "Move through closed Hatchway (opening it). Can charge enemies on other side if within 1 inch." },
+                { "name": "Cleansing Sweep", "cost": 1, "description": "Overwatch hits on 5+." }
+            ]
+        }
+    ]
+}

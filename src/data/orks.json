@@ -1,0 +1,127 @@
+{
+    "id": "orks",
+    "name": "Orks",
+    "units": [
+        { "id": "ork_warboss", "name": "Warboss", "points": 65, "keywords": ["Infantry", "Character", "Warboss", "Orks"], "stats": {} },
+        { "id": "ork_warboss_mega", "name": "Warboss in Mega Armour", "points": 80, "keywords": ["Infantry", "Character", "Warboss", "Mega Armour", "Orks"], "stats": {} },
+        { "id": "ork_beastboss", "name": "Beastboss", "points": 100, "keywords": ["Infantry", "Character", "Beast Snagga", "Warboss", "Orks"], "stats": {} },
+        { "id": "ork_big_mek", "name": "Big Mek", "points": 80, "keywords": ["Infantry", "Character", "Mek", "Orks"], "stats": {} },
+        { "id": "ork_big_mek_sag", "name": "Big Mek with Shokk Attack Gun", "points": 75, "keywords": ["Infantry", "Character", "Mek", "Orks"], "stats": {} },
+        { "id": "ork_big_mek_mega", "name": "Big Mek in Mega Armour", "points": 85, "keywords": ["Infantry", "Character", "Mek", "Mega Armour", "Orks"], "stats": {} },
+        { "id": "ork_mek", "name": "Mek", "points": 45, "keywords": ["Infantry", "Character", "Mek", "Orks"], "stats": {} },
+        { "id": "ork_painboss", "name": "Painboss", "points": 60, "keywords": ["Infantry", "Character", "Beast Snagga", "Orks"], "stats": {} },
+        { "id": "ork_painboy", "name": "Painboy", "points": 70, "keywords": ["Infantry", "Character", "Orks"], "stats": {} },
+        { "id": "ork_weirdboy", "name": "Weirdboy", "points": 55, "keywords": ["Infantry", "Character", "Psyker", "Orks"], "stats": {} },
+        { "id": "ork_wurrboy", "name": "Wurrboy", "points": 60, "keywords": ["Infantry", "Character", "Beast Snagga", "Psyker", "Orks"], "stats": {} },
+        { "id": "ork_snikrot", "name": "Boss Snikrot", "points": 85, "keywords": ["Infantry", "Character", "Epic Hero", "Warboss", "Orks"], "stats": {} },
+        { "id": "ork_zodgrod", "name": "Zodgrod Wortsnagga", "points": 80, "keywords": ["Infantry", "Character", "Epic Hero", "Beast Snagga", "Orks"], "stats": {} },
+        { "id": "ork_boyz", "name": "Boyz", "points": 85, "keywords": ["Infantry", "Battleline", "Mob", "Orks"], "stats": {} },
+        { "id": "ork_beast_snagga", "name": "Beast Snagga Boyz", "points": 105, "keywords": ["Infantry", "Battleline", "Beast Snagga", "Mob", "Orks"], "stats": {} },
+        { "id": "ork_burna", "name": "Burna Boyz", "points": 60, "keywords": ["Infantry", "Mob", "Orks"], "stats": {} },
+        { "id": "ork_flash_gitz", "name": "Flash Gitz", "points": 95, "keywords": ["Infantry", "Mob", "Orks"], "stats": {} },
+        { "id": "ork_gretchin", "name": "Gretchin", "points": 40, "keywords": ["Infantry", "Gretchin", "Orks"], "stats": {} },
+        { "id": "ork_kommandos", "name": "Kommandos", "points": 135, "keywords": ["Infantry", "Grenades", "Orks"], "stats": {} },
+        { "id": "ork_nobz", "name": "Nobz", "points": 105, "keywords": ["Infantry", "Mob", "Orks"], "stats": {} },
+        { "id": "ork_meganobz", "name": "Meganobz", "points": 90, "keywords": ["Infantry", "Mega Armour", "Mob", "Orks"], "stats": {} },
+        { "id": "ork_stormboyz", "name": "Stormboyz", "points": 65, "keywords": ["Infantry", "Jump Pack", "Mob", "Orks"], "stats": {} }
+    ],
+    "detachments": [
+        {
+            "id": "ramship_raiders",
+            "name": "Ramship Raiders",
+            "flavor_text": "These pugnacious craft slam headlong into the foes’ vessels, burying themselves in the superstructure before filling them with rampaging Ork boarders.",
+            "army_rule": {
+                "name": "Void Waaagh!",
+                "description": "Once per battle, call Void Waaagh! Adds +1 Str/Attacks and 5+ Invuln. Counts as Waaagh!",
+                "replaces": "Waaagh! (Modified)"
+            },
+            "detachment_rule": {
+                "name": "Belligerent Boarders",
+                "description": "Each time an attack targets an ORKS unit (excluding GROTS), if the Attack Strength > Unit Toughness, subtract 1 from the Wound roll."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders",
+                    "limit": 2,
+                    "allowed_units": ["ork_beastboss", "ork_big_mek", "ork_big_mek_sag", "ork_snikrot", "ork_warboss", "ork_mek", "ork_painboss", "ork_painboy", "ork_weirdboy", "ork_wurrboy", "ork_zodgrod"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Troops & Battleline",
+                    "limit_per_unit": 3,
+                    "allowed_units": ["ork_beast_snagga", "ork_boyz"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Elites & Specialists",
+                    "limit_per_unit": 1,
+                    "allowed_units": ["ork_burna", "ork_flash_gitz", "ork_gretchin", "ork_kommandos", "ork_nobz", "ork_stormboyz"]
+                }
+            ],
+            "rules_adaptations": [
+                { "unit_id": "ork_big_mek", "remove_ability": "Shokk-boosta" },
+                { "unit_id": "ork_snikrot", "remove_ability": "Kunnin' Infiltrator" },
+                { "unit_id": "ork_boyz", "remove_ability": "Get Da Good Bitz" },
+                { "unit_id": "ork_kommandos", "remove_ability": "Sneaky Gitz" },
+                { "unit_id": "ork_stormboyz", "remove_ability": "Deep Strike" },
+                { "unit_id": "ork_weirdboy", "remove_ability": "Da Jump" }
+            ],
+            "enhancements": [
+                { "name": "Living Battering Ram", "description": "Opponent cannot prevent you operating Hatchways. When opening Hatchway, enemies within 6\" on other side take Battle-shock test." },
+                { "name": "Scarred Brute", "description": "Bearer has Feel No Pain 5+." }
+            ],
+            "stratagems": [
+                { "name": "Pile Through", "cost": 1, "description": "Just after opening a Hatchway. Unit gains Fights First." },
+                { "name": "Ramboyz Rampage", "cost": 1, "description": "Boyz unit only. Can charge after Advance. Do not roll Advance, add 6\" automatically." },
+                { "name": "Eager to Fight", "cost": 1, "description": "Just after setting up Reinforcements. Unit can make an Advance move immediately." },
+                { "name": "Enraged Rush", "cost": 1, "description": "After enemy shoots Boyz unit. Roll D6 and move that many inches towards attacker (can enter Engagement Range)." }
+            ]
+        },
+        {
+            "id": "kaptin_killers",
+            "name": "Kaptin Killers",
+            "flavor_text": "Once a Warboss and his best Boyz get aboard an enemy ship their top priority is nearly always finding the enemy shipmaster and beating them to a pulp.",
+            "army_rule": {
+                "name": "Void Waaagh!",
+                "description": "Once per battle, call Void Waaagh! Adds +1 Str/Attacks and 5+ Invuln. Counts as Waaagh!",
+                "replaces": "Waaagh! (Modified)"
+            },
+            "detachment_rule": {
+                "name": "Comin' Through",
+                "description": "Auto-pass Desperate Escape tests. Can move through other models if they have lower Toughness than you."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Heavy Leaders",
+                    "limit": 2,
+                    "allowed_units": ["ork_big_mek_mega", "ork_warboss", "ork_warboss_mega"],
+                    "exclusions": [
+                        { "unit_id": "ork_warboss", "forbidden_keyword": "Mega Armour" }
+                    ]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Heavy Elites",
+                    "limit_per_unit": 2,
+                    "allowed_units": ["ork_meganobz", "ork_nobz"]
+                }
+            ],
+            "rules_adaptations": [
+                { "unit_id": "ork_big_mek_mega", "remove_ability": "Fix Dat Armour Up" },
+                { "unit_id": "ork_meganobz", "remove_ability": "Krumpin' Time" }
+            ],
+            "enhancements": [
+                { "name": "Tellyporta", "description": "Select one MEGANOBZ unit. They gain Deep Strike." },
+                { "name": "Gnasher Squig Crates", "description": "Warboss Only. Select Nobz/Meganobz within 6\" and near objective. If no enemies near objective, you Secure it." }
+            ],
+            "stratagems": [
+                { "name": "Loot on the Move", "cost": 1, "description": "After opening Hatchway. Hatchway cannot be closed again. Unit -1 AP when attacked." },
+                { "name": "Pile Through", "cost": 1, "description": "After opening Hatchway. Unit gains Fights First." },
+                { "name": "Pit Fighter", "cost": 1, "description": "Warboss can charge in a turn in which it Fell Back." },
+                { "name": "Cornered and Krumped", "cost": 1, "description": "Enemy Falls Back. You can fight them immediately (hit on 6s)." }
+            ]
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 {
-    "id": "sw",
+    "id": "space-wolves",
     "name": "Space Wolves",
     "units": [
         { "id": "sm_captain", "name": "Captain", "points": 80, "keywords": ["Infantry", "Character", "Imperium", "Captain"], "stats": {} },

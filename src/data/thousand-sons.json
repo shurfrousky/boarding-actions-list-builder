@@ -1,5 +1,5 @@
 {
-    "id": "ts",
+    "id": "thousand-sons",
     "name": "Thousand Sons",
     "units": [
         { "id": "ts_ahriman", "name": "Ahriman", "points": 100, "keywords": ["Infantry", "Character", "Psyker", "Chaos", "Tzeentch"], "stats": {} },

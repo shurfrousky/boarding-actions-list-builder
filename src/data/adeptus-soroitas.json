@@ -1,0 +1,192 @@
+{
+    "id": "adepta-sororitas",
+    "name": "Adepta Sororitas",
+    "units": [
+        { "id": "as_canoness", "name": "Canoness", "points": 65, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "as_canoness_jump", "name": "Jump Pack Canoness", "points": 75, "keywords": ["Infantry", "Character", "Jump Pack", "Fly", "Imperium"], "stats": {} },
+        { "id": "as_daemonifuge", "name": "Daemonifuge", "points": 105, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "as_palatine", "name": "Palatine", "points": 60, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "as_aestred", "name": "Aestred Thurga", "points": 75, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "as_dialogus", "name": "Dialogus", "points": 40, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "as_dogmata", "name": "Dogmata", "points": 40, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "as_hospitaller", "name": "Hospitaller", "points": 50, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "as_imagifier", "name": "Imagifier", "points": 50, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "as_priest", "name": "Ministorum Priest", "points": 50, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "as_battle_sisters", "name": "Battle Sisters Squad", "points": 110, "keywords": ["Infantry", "Battleline", "Imperium"], "stats": {} },
+        { "id": "as_dominion", "name": "Dominion Squad", "points": 120, "keywords": ["Infantry", "Imperium"], "stats": {} },
+        { "id": "as_novitiate", "name": "Sisters Novitiate Squad", "points": 100, "keywords": ["Infantry", "Imperium"], "stats": {} },
+        { "id": "as_arco", "name": "Arco-flagellants", "points": 65, "keywords": ["Infantry", "Imperium"], "stats": {} },
+        { "id": "as_sacresants", "name": "Celestian Sacresants", "points": 85, "keywords": ["Infantry", "Imperium"], "stats": {} },
+        { "id": "as_repentia", "name": "Repentia Squad", "points": 75, "keywords": ["Infantry", "Imperium"], "stats": {} },
+        { "id": "as_seraphim", "name": "Seraphim Squad", "points": 90, "keywords": ["Infantry", "Jump Pack", "Fly", "Imperium"], "stats": {} },
+        { "id": "as_zephyrim", "name": "Zephyrim Squad", "points": 85, "keywords": ["Infantry", "Jump Pack", "Fly", "Imperium"], "stats": {} }
+    ],
+    "detachments": [
+        {
+            "id": "pious-protectors",
+            "name": "Pious Protectors",
+            "flavor_text": "The Adepta Sororitas are no strangers to void combat. Boltguns, flamers and melta weapons make excellent tools for cleansing obstinate foes from the decks of a vessel.",
+            "army_rule": {
+                "name": "Minor Miracles",
+                "description": "Units from your army with the Acts of Faith ability retain that ability and gain this one. When gaining a Miracle dice at the start of the turn from the Acts of Faith ability, you only do so in your turn, not your opponent's. In addition, each time you gain a Miracle dice for any reason, improve the value of that Miracle dice by 1 (to a maximum of 6).",
+                "replaces": "Acts of Faith"
+            },
+            "detachment_rule": {
+                "name": "The Emperor Protects",
+                "description": "Each time an attack targets an ADEPTA SORORITAS unit from your army (excluding ARCO-FLAGELLANTS and REPENTIA SQUAD units), if that unit is within range of an objective marker, models in that unit have a 4+ invulnerable save against that attack. If that unit also performed the Secure Site Tactical Manoeuvre in your previous Shooting phase, models in it have a 3+ invulnerable save against that attack instead."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders - Main",
+                    "limit": 1,
+                    "allow_duplicates": false,
+                    "allowed_units": ["as_canoness", "as_canoness_jump", "as_daemonifuge", "as_palatine"]
+                },
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders - Support",
+                    "limit": 2,
+                    "allow_duplicates": false,
+                    "allowed_units": ["as_aestred", "as_dialogus", "as_dogmata", "as_hospitaller", "as_imagifier", "as_priest"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Troops",
+                    "limit_per_unit": 3,
+                    "allowed_units": ["as_battle_sisters", "as_dominion", "as_novitiate"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Elites",
+                    "limit_per_unit": 1,
+                    "allowed_units": ["as_arco", "as_sacresants", "as_repentia"]
+                },
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Fast Attack",
+                    "limit": 1,
+                    "allow_duplicates": false,
+                    "allowed_units": ["as_seraphim", "as_zephyrim"]
+                }
+            ],
+            "forming_squads": {
+                "cannot_split": ["as_novitiate"],
+                "split_penalties": [
+                    {
+                        "units": ["as_battle_sisters", "as_dominion"],
+                        "condition": "when_split",
+                        "note": "Select one of the resulting Boarding Squads to gain the Cherub token. The Boarding Squad without the Cherub token loses the Cherub ability."
+                    }
+                ]
+            },
+            "rules_adaptations": [
+                { "unit_id": "as_battle_sisters", "remove_ability": "Defenders of the Faith" },
+                { "unit_id": "as_canoness_jump", "remove_ability": "Deep Strike" },
+                { "unit_id": "as_daemonifuge", "remove_ability": "Holy Judgement" },
+                { "unit_id": "as_dominion", "remove_ability": "Righteous Awareness" },
+                { "unit_id": "as_palatine", "remove_ability": "Rapturous Blows" },
+                { "unit_id": "as_seraphim", "remove_ability": "Angelic Ascent" },
+                { "unit_id": "as_seraphim", "remove_ability": "Deep Strike" },
+                { "unit_id": "as_zephyrim", "remove_ability": "Deep Strike" }
+            ],
+            "enhancements": [
+                { 
+                    "name": "Martial Discipline", 
+                    "description": "At the start of your Shooting phase, you can select one friendly ADEPTA SORORITAS unit within 6\" of the bearer. Until the end of the phase, that unit is eligible to shoot in a turn in which it Advanced or Fell Back."
+                },
+                { 
+                    "name": "Limitless Resolve", 
+                    "description": "While the bearer is on the battlefield, friendly Battle-shocked ADEPTA SORORITAS models (excluding ARCO-FLAGELLANTS and REPENTIA SQUAD models) have an Objective Control characteristic of 1."
+                }
+            ],
+            "stratagems": [
+                { 
+                    "name": "Final Testament", 
+                    "cost": 1, 
+                    "description": "Fight phase, just after an enemy unit has selected its targets. You can discard 1 Miracle dice. Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6, adding 1 to the result if you discarded a Miracle dice: on a 4+, do not remove the destroyed model from play; it can fight after the attacking unit has finished making its attacks, and is then removed from play."
+                },
+                { 
+                    "name": "Prayer of Precision", 
+                    "cost": 1, 
+                    "description": "Your Shooting phase. You can discard 1 Miracle dice. Until the end of the phase, each time a model in your unit makes an attack, re-roll a Hit roll of 1. If you discarded a Miracle dice, you can re-roll the Hit roll instead."
+                },
+                { 
+                    "name": "Repel Boarders", 
+                    "cost": 1, 
+                    "description": "Your opponent's Movement or Charge phase. Until the end of the phase, each time a model in your unit makes an attack while firing Overwatch, an unmodified Hit roll of 5+ is required to score a hit, instead of an unmodified 6. In addition, until the end of the phase, each time you roll to determine the number of attacks made with a weapon equipped by a model in your unit, you can re-roll the result."
+                },
+                { 
+                    "name": "Radiant Illumination", 
+                    "cost": 1, 
+                    "description": "Your opponent's Charge phase, just after an enemy unit has declared a charge. You can discard 1 Miracle dice. Until the end of the phase, subtract 1 from Charge rolls made for that enemy unit. If you discarded a Miracle dice, subtract 2 from Charge rolls made for that enemy unit instead."
+                }
+            ]
+        },
+        {
+            "id": "penitents-and-pilgrims",
+            "name": "Penitents and Pilgrims",
+            "flavor_text": "The Ecclesiarchy's priests travel huge distances in service to the God-Emperor, often to visit holy shrines or take part in Wars of Faith. The penitents and pilgrims who comprise their travelling flocks are zealously devoted to the faith, and relish the opportunity to prove their faith in battle.",
+            "army_rule": {
+                "name": "Minor Miracles",
+                "description": "Units from your army with the Acts of Faith ability retain that ability and gain this one. When gaining a Miracle dice at the start of the turn from the Acts of Faith ability, you only do so in your turn, not your opponent's. In addition, each time you gain a Miracle dice for any reason, improve the value of that Miracle dice by 1 (to a maximum of 6).",
+                "replaces": "Acts of Faith"
+            },
+            "detachment_rule": {
+                "name": "Bloody Redemption",
+                "description": "The first time each turn that you gain 1 Miracle dice as the result of an ARCO-FLAGELLANTS or REPENTIA SQUAD unit from your army being destroyed, do not roll a D6; that Miracle dice has a value of 6 instead."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Leaders",
+                    "limit_per_unit": 2,
+                    "allowed_units": ["as_priest"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Troops",
+                    "limit_per_unit": 3,
+                    "allowed_units": ["as_arco", "as_repentia"]
+                }
+            ],
+            "forming_squads": {
+                "cannot_split": [],
+                "split_penalties": []
+            },
+            "rules_adaptations": [],
+            "enhancements": [
+                { 
+                    "name": "Fervent Ferocity", 
+                    "description": "The bearer has the Feel No Pain 4+ ability."
+                },
+                { 
+                    "name": "Sanctification Rituals", 
+                    "description": "The bearer can perform the Secure Site Tactical Manoeuvre as if it had the BATTLELINE keyword."
+                }
+            ],
+            "stratagems": [
+                { 
+                    "name": "Slick with Gore", 
+                    "cost": 1, 
+                    "description": "Fight phase, just after an ADEPTA SORORITAS unit from your army destroys an enemy unit. Until the end of the battle, your unit is slick with gore. In the Battle-shock step of your opponent's Command phase, if an enemy unit that is below its Starting Strength is within 6\" of and visible to a unit from your army that is slick with gore, that enemy unit must take a Battle-shock test. If that enemy unit is also Below Half-strength, subtract 1 from that test. This cannot cause a unit to take two Battle-shock tests in the same phase. You cannot use this Stratagem while a unit from your army that is slick with gore is on the battlefield."
+                },
+                { 
+                    "name": "Contempt for Death", 
+                    "cost": 1, 
+                    "description": "Your opponent's Shooting phase or the Fight phase, just after an enemy unit has selected its targets. Until the end of the phase, each time an attack targets your unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of your unit, subtract 1 from the Wound roll."
+                },
+                { 
+                    "name": "Fevered Zealots", 
+                    "cost": 1, 
+                    "description": "Your Movement phase, just after an ADEPTA SORORITAS unit from your army opens a Hatchway. Until the end of the turn, your unit has the Fights First ability."
+                },
+                { 
+                    "name": "Savage Frenzy", 
+                    "cost": 1, 
+                    "description": "Your opponent's Movement phase, just after an enemy unit is selected to Fall Back. Until the end of the phase, when that enemy unit Falls Back, models in it must take Desperate Escape tests as if their unit was Battle-shocked. When doing so, if that enemy unit is also Battle-shocked by other means, subtract 1 from each of those Desperate Escape tests."
+                }
+            ]
+        }
+    ]
+}

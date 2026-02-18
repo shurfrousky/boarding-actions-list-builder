@@ -1,0 +1,204 @@
+{
+    "id": "chaos-space-marines",
+    "name": "Chaos Space Marines",
+    "units": [
+        { "id": "csm_abaddon", "name": "Abaddon the Despoiler", "points": 295, "keywords": ["Infantry", "Character", "Epic Hero", "Terminator", "Chaos", "Chaos Undivided", "Warmaster"], "stats": {} },
+        { "id": "csm_lord", "name": "Chaos Lord", "points": 90, "keywords": ["Infantry", "Character", "Chaos", "Chaos Lord"], "stats": {} },
+        { "id": "csm_lord_term", "name": "Chaos Lord in Terminator Armour", "points": 95, "keywords": ["Infantry", "Character", "Terminator", "Chaos", "Chaos Lord"], "stats": {} },
+        { "id": "csm_lord_jump", "name": "Chaos Lord with Jump Pack", "points": 90, "keywords": ["Infantry", "Character", "Jump Pack", "Fly", "Chaos", "Chaos Lord"], "stats": {} },
+        { "id": "csm_cypher", "name": "Cypher", "points": 90, "keywords": ["Infantry", "Character", "Epic Hero", "Chaos"], "stats": {} },
+        { "id": "csm_dark_apostle", "name": "Dark Apostle", "points": 75, "keywords": ["Infantry", "Character", "Chaos", "Dark Apostle"], "stats": {} },
+        { "id": "csm_fabius", "name": "Fabius Bile", "points": 85, "keywords": ["Infantry", "Character", "Epic Hero", "Chaos"], "stats": {} },
+        { "id": "csm_haarken", "name": "Haarken Worldclaimer", "points": 90, "keywords": ["Infantry", "Character", "Epic Hero", "Jump Pack", "Fly", "Chaos"], "stats": {} },
+        { "id": "csm_huron", "name": "Huron Blackheart", "points": 80, "keywords": ["Infantry", "Character", "Epic Hero", "Chaos"], "stats": {} },
+        { "id": "csm_moe", "name": "Master of Executions", "points": 80, "keywords": ["Infantry", "Character", "Chaos"], "stats": {} },
+        { "id": "csm_mop", "name": "Master of Possession", "points": 80, "keywords": ["Infantry", "Character", "Psyker", "Chaos"], "stats": {} },
+        { "id": "csm_sorcerer", "name": "Sorcerer", "points": 60, "keywords": ["Infantry", "Character", "Psyker", "Chaos"], "stats": {} },
+        { "id": "csm_sorc_term", "name": "Sorcerer in Terminator Armour", "points": 90, "keywords": ["Infantry", "Character", "Terminator", "Psyker", "Chaos"], "stats": {} },
+        { "id": "csm_warpsmith", "name": "Warpsmith", "points": 70, "keywords": ["Infantry", "Character", "Chaos", "Warpsmith"], "stats": {} },
+        { "id": "csm_cultist_firebrand", "name": "Cultist Firebrand", "points": 45, "keywords": ["Infantry", "Character", "Damned", "Chaos"], "stats": {} },
+        { "id": "csm_dark_commune", "name": "Dark Commune", "points": 65, "keywords": ["Infantry", "Character", "Damned", "Chaos"], "stats": {} },
+        { "id": "csm_traitor_enforcer", "name": "Traitor Enforcer", "points": 65, "keywords": ["Infantry", "Character", "Damned", "Chaos"], "stats": {} },
+        { "id": "csm_legionaries", "name": "Legionaries", "points": 80, "keywords": ["Infantry", "Battleline", "Chaos"], "stats": {} },
+        { "id": "csm_cultists", "name": "Cultist Mob", "points": 50, "keywords": ["Infantry", "Battleline", "Damned", "Chaos"], "stats": {} },
+        { "id": "csm_accursed", "name": "Accursed Cultists", "points": 95, "keywords": ["Infantry", "Damned", "Chaos"], "stats": {} },
+        { "id": "csm_fellgor", "name": "Fellgor Beastmen", "points": 85, "keywords": ["Infantry", "Damned", "Chaos"], "stats": {} },
+        { "id": "csm_traitor_guard", "name": "Traitor Guardsmen Squad", "points": 70, "keywords": ["Infantry", "Battleline", "Damned", "Chaos"], "stats": {} },
+        { "id": "csm_terminators", "name": "Chaos Terminator Squad", "points": 185, "keywords": ["Infantry", "Terminator", "Chaos"], "stats": {} },
+        { "id": "csm_chosen", "name": "Chosen", "points": 110, "keywords": ["Infantry", "Chaos"], "stats": {} },
+        { "id": "csm_spawn", "name": "Chaos Spawn", "points": 65, "keywords": ["Beast", "Chaos"], "stats": {} },
+        { "id": "csm_possessed", "name": "Possessed", "points": 125, "keywords": ["Infantry", "Chaos"], "stats": {} },
+        { "id": "csm_raptors", "name": "Raptors", "points": 85, "keywords": ["Infantry", "Jump Pack", "Fly", "Chaos"], "stats": {} },
+        { "id": "csm_warp_talons", "name": "Warp Talons", "points": 100, "keywords": ["Infantry", "Jump Pack", "Fly", "Chaos"], "stats": {} }
+    ],
+    "detachments": [
+        {
+            "id": "infernal_reavers",
+            "name": "Infernal Reavers",
+            "flavor_text": "These cruel raiders excel in shipboard combat, seizing plunder and slaughtering entire crews as bloody offerings to their Dark Gods.",
+            "army_rule": {
+                "name": "The Forsaken",
+                "description": "If a Dark Pacts Leadership test is failed, the unit is 'Forsaken' and loses the Dark Pacts ability for the rest of the battle.",
+                "replaces": "Standard Dark Pacts"
+            },
+            "detachment_rule": {
+                "name": "Dark Rewards",
+                "description": "Each time a Heretic Astartes unit takes a Leadership test for Dark Pacts, on a roll of 9+, you gain 1CP."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders",
+                    "limit": 2,
+                    "allowed_units": ["csm_abaddon", "csm_lord", "csm_lord_term", "csm_lord_jump", "csm_cypher", "csm_dark_apostle", "csm_fabius", "csm_haarken", "csm_huron", "csm_moe", "csm_mop", "csm_sorcerer", "csm_sorc_term", "csm_warpsmith"]
+                },
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Cultist Leaders",
+                    "limit": 1,
+                    "allowed_units": ["csm_cultist_firebrand", "csm_dark_commune", "csm_traitor_enforcer"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Battleline & Troops",
+                    "limit_per_unit": 3,
+                    "allowed_units": ["csm_legionaries", "csm_cultists", "csm_accursed", "csm_fellgor", "csm_traitor_guard"]
+                },
+                {
+                    "type": "dependency_check",
+                    "error_message": "Total count of Cultists/Traitor Guard/Beastmen cannot exceed total Legionaries units.",
+                    "dependent_units": ["csm_cultists", "csm_accursed", "csm_fellgor", "csm_traitor_guard"],
+                    "control_unit": "csm_legionaries",
+                    "logic": "sum(dependent) <= count(control)"
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Elites",
+                    "limit_per_unit": 1,
+                    "allowed_units": ["csm_terminators", "csm_chosen"]
+                },
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Specialists / Beasts",
+                    "limit": 1,
+                    "allowed_units": ["csm_spawn", "csm_possessed", "csm_raptors", "csm_warp_talons"]
+                }
+            ],
+            "rules_adaptations": [
+                { "unit_id": "csm_accursed", "remove_ability": "Howling Horde" },
+                { "unit_id": "csm_lord_jump", "remove_ability": "Deep Strike" },
+                { "unit_id": "csm_raptors", "remove_ability": "Deep Strike" },
+                { "unit_id": "csm_warp_talons", "remove_ability": "Deep Strike" },
+                { "unit_id": "csm_warp_talons", "remove_ability": "Warp Strike" }
+            ],
+            "enhancements": [
+                { "name": "Voice of the Octed", "description": "When making Dark Pact, gain BOTH abilities (Sustained Hits and Lethal Hits) instead of just one." },
+                { "name": "Swollen with Power", "description": "Add 1 to Toughness. Re-roll roll-offs when operating/preventing Hatchways." }
+            ],
+            "stratagems": [
+                { "name": "Inveterate Murderers", "cost": 1, "description": "Fight Phase. If Attack Strength <= Target Toughness, add 1 to Wound roll." },
+                { "name": "Low Cunning", "cost": 1, "description": "When targeted. If Attack Strength > Your Toughness, subtract 1 from Wound roll." },
+                { "name": "Next Prize", "cost": 1, "description": "After Securing objective or Opening Hatchway. Make a Normal Move up to 3\"." },
+                { "name": "Cruel Execution", "cost": 1, "description": "Unit is eligible to shoot in a turn in which it Fell Back." }
+            ]
+        },
+        {
+            "id": "underdeck_uprising",
+            "name": "Underdeck Uprising",
+            "flavor_text": "Whipped into a traitorous frenzy by demagogues promises of power, mutants and madmen rise up en masse to seize the ship.",
+            "army_rule": {
+                "name": "The Forsaken",
+                "description": "If a Dark Pacts Leadership test is failed, the unit is 'Forsaken' and loses the Dark Pacts ability for the rest of the battle.",
+                "replaces": "Standard Dark Pacts"
+            },
+            "detachment_rule": {
+                "name": "Fanatical Onslaught",
+                "description": "In opponent's Shooting phase, if friendly models destroyed, unit can make a Rush move (3\" towards attacker, can enter Engagement Range)."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders",
+                    "limit": 2,
+                    "allowed_units": ["csm_cultist_firebrand", "csm_dark_commune", "csm_dark_apostle"],
+                    "exclusions": [
+                        { "unit_id": "csm_dark_apostle", "max_count": 1 }
+                    ]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Troops",
+                    "limit_per_unit": 3,
+                    "allowed_units": ["csm_accursed", "csm_cultists", "csm_fellgor"]
+                },
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Beasts",
+                    "limit": 2,
+                    "allowed_units": ["csm_spawn"]
+                }
+            ],
+            "rules_adaptations": [
+                { "unit_id": "csm_accursed", "remove_ability": "Howling Horde" },
+                { "unit_id": "csm_cultists", "remove_ability": "For the Dark Gods" }
+            ],
+            "enhancements": [
+                { "name": "Rabble Rouser", "description": "Once per turn, select nearby Cultist/Fellgor unit. Add 1 to Attacks characteristic." },
+                { "name": "Vox Malevolus", "description": "In first battle round, re-roll Advance rolls for army." }
+            ],
+            "stratagems": [
+                { "name": "Infernal Altars", "cost": 1, "description": "Target Damned unit gains FNP 5+ (4+ if Cultist Mob) when on objective." },
+                { "name": "Fleeting Might", "cost": 1, "description": "Damned unit gains [DEVASTATING WOUNDS] after Dark Pact." },
+                { "name": "Crude Sabotage", "cost": 1, "description": "Operate Hatchway in Movement Phase without moving. Cannot operate again this turn." },
+                { "name": "Storm the Bridge!", "cost": 1, "description": "Damned or Spawn unit can Charge in a turn in which it Advanced." }
+            ]
+        },
+        {
+            "id": "champions_of_chaos",
+            "name": "Champions of Chaos",
+            "flavor_text": "Every Chaos Lord has a cadre of chosen warriors and dread lieutenants to enforce their will.",
+            "army_rule": {
+                "name": "The Forsaken",
+                "description": "If a Dark Pacts Leadership test is failed, the unit is 'Forsaken' and loses the Dark Pacts ability for the rest of the battle.",
+                "replaces": "Standard Dark Pacts"
+            },
+            "detachment_rule": {
+                "name": "Dark Purpose",
+                "description": "When Consolidating, if not in Engagement Range, can move towards closest objective (must end within range of it)."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders",
+                    "limit": 2,
+                    "allowed_units": ["csm_abaddon", "csm_lord_term", "csm_sorc_term"]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Elites",
+                    "limit_per_unit": 2,
+                    "allowed_units": ["csm_terminators", "csm_chosen"]
+                },
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Beasts",
+                    "limit": 1,
+                    "allowed_units": ["csm_spawn"]
+                }
+            ],
+            "rules_adaptations": [
+                { "unit_id": "csm_terminators", "gain_ability": "Secure Site as if Battleline" }
+            ],
+            "enhancements": [
+                { "name": "Manifest Vengeance", "description": "Fight on Death on a 4+ (add +1 to roll if destroyed by Melee)." },
+                { "name": "Dark Majesty", "description": "After Charge move, select enemy in Engagement Range. They are Stunned (-1 to Hit) until next Charge phase." }
+            ],
+            "stratagems": [
+                { "name": "Imperious Advance", "cost": 1, "description": "Terminator unit +1 Attacks. Must target enemy on opposite side of Hatchway." },
+                { "name": "Malign Will", "cost": 1, "description": "Subtract 1 from Dark Pact test. If passed, Secure nearby objective if no enemies near it." },
+                { "name": "Infernal Patrons", "cost": 1, "description": "Use when opponent uses Stratagem. Enemy takes Leadership test. If failed, Stratagem has no effect." },
+                { "name": "Aggressive Strike", "cost": 1, "description": "Unit arriving from Deep Strike can make a Normal Move of 6\"." }
+            ]
+        }
+    ]
+}
