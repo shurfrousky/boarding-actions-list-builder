@@ -30,12 +30,12 @@ export default function App() {
         const displayableRules = currentDetachment.mustering_rules.filter(rule => rule.allowed_units);
 
         return displayableRules.map(rule => {
-            // 1. Calculate the TOTAL count for this category (for Leader limits)
+            // Calculate the TOTAL count for this category (for Leader limits)
             const categoryTotalCount = roster.filter(r => 
                 rule.allowed_units.includes(r.id)
             ).length;
 
-            // 2. Get the units and calculate "disabled" for EACH one
+            // Get the units and calculate "disabled" for EACH one
             const unitsInThisRule = currentFaction.units
                 .filter(u => rule.allowed_units.includes(u.id))
                 .map(u => {

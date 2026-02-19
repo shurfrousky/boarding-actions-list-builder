@@ -2,18 +2,18 @@
     "id": "adeptus-custodes",
     "name": "Adeptus Custodes",
     "units": [
-        { "id": "ac_blade_champ", "name": "Blade Champion", "points": 110, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
-        { "id": "ac_shield_cap", "name": "Infantry Shield-Captain", "points": 105, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
-        { "id": "ac_trajann", "name": "Trajann Valoris", "points": 160, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
-        { "id": "ac_valerian", "name": "Valerian", "points": 105, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
-        { "id": "ac_custodian_guard", "name": "Custodian Guard", "points": 200, "keywords": ["Infantry", "Battleline", "Imperium"], "stats": {} },
-        { "id": "ac_allarus", "name": "Allarus Custodians", "points": 150, "keywords": ["Infantry", "Terminator", "Imperium"], "stats": {} },
+        { "id": "ac_blade_champ", "name": "Blade Champion", "points": 120, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "ac_shield_cap", "name": "Shield-Captain", "points": 120, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "ac_trajann", "name": "Trajann Valoris", "points": 140, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "ac_valerian", "name": "Valerian", "points": 110, "keywords": ["Infantry", "Character", "Imperium"], "stats": {} },
+        { "id": "ac_aleya", "name": "Aleya", "points": 65, "keywords": ["Infantry", "Character", "Anathema Psykana", "Imperium"], "stats": {} },
+        { "id": "ac_knight_centura", "name": "Knight-Centura", "points": 55, "keywords": ["Infantry", "Character", "Anathema Psykana", "Imperium"], "stats": {} },
+        { "id": "ac_custodian_guard", "name": "Custodian Guard", "points": 150, "keywords": ["Infantry", "Battleline", "Imperium"], "stats": {} },
+        { "id": "ac_allarus", "name": "Allarus Custodians", "points": 110, "keywords": ["Infantry", "Terminator", "Imperium"], "stats": {} },
         { "id": "ac_wardens", "name": "Custodian Wardens", "points": 210, "keywords": ["Infantry", "Imperium"], "stats": {} },
-        { "id": "ac_prosecutors", "name": "Prosecutors", "points": 60, "keywords": ["Infantry", "Anathema Psykana", "Imperium"], "stats": {} },
-        { "id": "ac_vigilators", "name": "Vigilators", "points": 65, "keywords": ["Infantry", "Anathema Psykana", "Imperium"], "stats": {} },
-        { "id": "ac_witchseekers", "name": "Witchseekers", "points": 70, "keywords": ["Infantry", "Anathema Psykana", "Imperium"], "stats": {} },
-        { "id": "ac_aleya", "name": "Aleya", "points": 75, "keywords": ["Infantry", "Character", "Anathema Psykana", "Imperium"], "stats": {} },
-        { "id": "ac_knight_centura", "name": "Knight-Centura", "points": 65, "keywords": ["Infantry", "Character", "Anathema Psykana", "Imperium"], "stats": {} }
+        { "id": "ac_prosecutors", "name": "Prosecutors", "points": 40, "keywords": ["Infantry", "Anathema Psykana", "Imperium"], "stats": {} },
+        { "id": "ac_vigilators", "name": "Vigilators", "points": 45, "keywords": ["Infantry", "Anathema Psykana", "Imperium"], "stats": {} },
+        { "id": "ac_witchseekers", "name": "Witchseekers", "points": 45, "keywords": ["Infantry", "Anathema Psykana", "Imperium"], "stats": {} }
     ],
     "detachments": [
         {

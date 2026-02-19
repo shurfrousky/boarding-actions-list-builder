@@ -8,8 +8,8 @@
         { "id": "ts_sorc", "name": "Sorcerer", "points": 80, "keywords": ["Infantry", "Character", "Psyker", "Chaos", "Tzeentch"], "stats": {} },
         { "id": "ts_term_sorc", "name": "Thousand Sons Sorcerer in Terminator Armour", "points": 85, "keywords": ["Infantry", "Character", "Psyker", "Terminator", "Chaos", "Tzeentch"], "stats": {} },
         { "id": "ts_rubric", "name": "Rubric Marines", "points": 100, "keywords": ["Infantry", "Battleline", "Psyker", "Chaos", "Tzeentch"], "stats": {} },
-        { "id": "ts_tzaangor", "name": "Tzaangors", "points": 70, "keywords": ["Infantry", "Battleline", "Chaos", "Tzeentch"], "stats": {} },
         { "id": "ts_sot", "name": "Scarab Occult Terminators", "points": 180, "keywords": ["Infantry", "Terminator", "Psyker", "Chaos", "Tzeentch"], "stats": {} },
+        { "id": "ts_tzaangor", "name": "Tzaangors", "points": 70, "keywords": ["Infantry", "Battleline", "Chaos", "Tzeentch"], "stats": {} },
         { "id": "ts_spawn", "name": "Thousand Sons Chaos Spawn", "points": 65, "keywords": ["Beast", "Chaos", "Tzeentch"], "stats": {} }
     ],
     "detachments": [
