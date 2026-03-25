@@ -129,6 +129,7 @@ export default function App() {
         
             {/* HEADER */}
             <header style={{ borderBottom: '2px solid #333', marginBottom: '20px', paddingBottom: '10px' }}>
+                <title>Boarding Actions</title>
                 <h1>Boarding Actions List Builder</h1>
                 <div style={{ fontSize: '1.5em', fontWeight: 'bold', color: currentPoints > 500 ? 'red' : 'green' }}>
                 Points: {currentPoints} / 500
