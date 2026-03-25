@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import armyData from './boarding_actions_data.json'; 
+import { useState, useEffect } from 'react';
+import factionsIndex from './data/factions-index.json'; 
 import './App.css'; 
 
 export default function App() {
@@ -7,24 +7,49 @@ export default function App() {
     const [selectedFactionId, setSelectedFactionId] = useState(""); 
     const [selectedDetachmentId, setSelectedDetachmentId] = useState("");
 
+    // state to hold dunamically loaded faction data
+    const [currentFactionData, setCurrentFactionData] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+
     // toggle rules popup
     const [showRules, setShowRules] = useState(false);
 
     // The "Roster" is the list of units user has added
     const [roster, setRoster] = useState([]);
 
-    // finding the full object for the selected faction based on the ID stored in state.
-    const currentFaction = armyData.factions.find(f => f.id === selectedFactionId);
-    
-    // finding the full object for the selected detachment.
-    const currentDetachment = currentFaction?.detachments.find(d => d.id === selectedDetachmentId);
+    // Asyn function to load faction data dynamically
+    const loadFactionData = async (factionId) => {
+        setIsLoading(true);
+        try {
+            const data = await import(`./data/${factionId}.json`); // Loading based on faction ID
+            setCurrentFactionData(data.default);
+        } catch (error) {
+            console.error(`Failed to load faction data for ${factionId}:`, error);
+            alert(`Error loading faction data. Please try again.`);
+            setCurrentFactionData(null);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    // useEffect to load faction data whenever selectedFactionId changes
+    useEffect(() => {
+        if (selectedFactionId) {
+            loadFactionData(selectedFactionId);
+        } else {
+            setCurrentFactionData(null);
+        }
+    }, [selectedFactionId]);
 
     // Calculate total points automatically from the roster
     const currentPoints = roster.reduce((total, unit) => total + unit.points, 0);
+    
+    // finding the full object for the selected detachment.
+    const currentDetachment = currentFactionData?.detachments.find(d => d.id === selectedDetachmentId);
 
     // -- HELPER -- Grouping Units by their Mustering Rules
     const getCategorizedUnits = () => {
-        if (!currentDetachment) return [];
+        if (!currentDetachment || !currentFactionData) return [];
 
         // Filter out rules that don't have 'allowed_units'
         const displayableRules = currentDetachment.mustering_rules.filter(rule => rule.allowed_units);
@@ -36,7 +61,7 @@ export default function App() {
             ).length;
 
             // Get the units and calculate "disabled" for EACH one
-            const unitsInThisRule = currentFaction.units
+            const unitsInThisRule = currentFactionData.units
                 .filter(u => rule.allowed_units.includes(u.id))
                 .map(u => {
                     // How many of THIS specific unit do we have?
@@ -44,12 +69,12 @@ export default function App() {
                     
                     let isDisabled = false;
 
-                    // LOGIC A: "Select up to X Total" (Leaders)
+                    // "Select up to X Total" (Leaders)
                     if (rule.type === 'select_up_to_x') {
                         if (categoryTotalCount >= rule.limit) isDisabled = true;
                     }
 
-                    // LOGIC B: "Select up to X Each" (Troops/Elites)
+                    // "Select up to X Each" (Troops/Elites)
                     if (rule.type === 'select_up_to_x_each') {
                         if (specificUnitCount >= rule.limit_per_unit) isDisabled = true;
                     }
@@ -120,11 +145,13 @@ export default function App() {
                         style={{ padding: '8px', width: '200px' }}
                     >
                         <option value="">-- Choose Faction --</option>
-                        {armyData.factions.map(f => <option key={f.id} value={f.id}>{f.name}</option>)}
+                        {factionsIndex.factions.map(f => <option key={f.id} value={f.id}>{f.name}</option>)}
                     </select>
                 </div>
 
-                {currentFaction && (
+                {isLoading && <div>Loading faction data...</div>}
+
+                {currentFactionData && (
                 <div>
                     <label style={{ display: 'block', fontWeight: 'bold' }}>Detachment</label>
                     <select 
@@ -133,7 +160,7 @@ export default function App() {
                         style={{ padding: '8px', width: '250px' }}
                     >
                         <option value="">-- Choose Detachment --</option>
-                        {currentFaction.detachments.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
+                        {currentFactionData.detachments.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
                     </select>
                 </div>
                 )}
