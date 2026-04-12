@@ -1,0 +1,300 @@
+{
+    "id": "adeptus-mechanicus",
+    "name": "Adeptus Mechanicus",
+    "units": [
+        { "id": "am_tp_dominus", "name": "Tech-Priest Dominus", "points": 65, "keywords": ["Infantry", "Character", "Imperium", "Adeptus Mechanicus"], "stats": {} },
+        { "id": "am_tp_enginseer", "name": "Tech-Priest Enginseer", "points": 55, "keywords": ["Infantry", "Character", "Imperium", "Adeptus Mechanicus"], "stats": {} },
+        { "id": "am_tp_manipulus", "name": "Tech-Priest Manipulus", "points": 60, "keywords": ["Infantry", "Character", "Imperium", "Adeptus Mechanicus"], "stats": {} },
+        { "id": "am_technoarcheologist", "name": "Technoarcheologist", "points": 45, "keywords": ["Infantry", "Character", "Imperium", "Adeptus Mechanicus"], "stats": {} },
+        { "id": "am_skitarii_marshal", "name": "Skitarii Marshal", "points": 35, "keywords": ["Infantry", "Character", "Imperium", "Skitarii", "Adeptus Mechanicus"], "stats": {} },
+        { "id": "am_skitarii_rangers", "name": "Skitarii Rangers", "points": 85, "keywords": ["Infantry", "Battleline", "Imperium", "Skitarii", "Adeptus Mechanicus"], "stats": {} },
+        { "id": "am_skitarii_vanguard", "name": "Skitarii Vanguard", "points": 95, "keywords": ["Infantry", "Battleline", "Imperium", "Skitarii", "Adeptus Mechanicus"], "stats": {} },
+        { "id": "am_corpuscarii", "name": "Corpuscarii Electro-Priests", "points": 130, "keywords": ["Infantry", "Imperium", "Electro-Priests", "Adeptus Mechanicus"], "stats": {} },
+        { "id": "am_fulgurite", "name": "Fulgurite Electro-Priests", "points": 140, "keywords": ["Infantry", "Imperium", "Electro-Priests", "Adeptus Mechanicus"], "stats": {} },
+        { "id": "am_kataphron_breachers", "name": "Kataphron Breachers", "points": 160, "keywords": ["Infantry", "Imperium", "Kataphron", "Adeptus Mechanicus"], "stats": {} },
+        { "id": "am_kataphron_destroyers", "name": "Kataphron Destroyers", "points": 105, "keywords": ["Infantry", "Imperium", "Kataphron", "Adeptus Mechanicus"], "stats": {} },
+        { "id": "am_sicarian_infiltrators", "name": "Sicarian Infiltrators", "points": 155, "keywords": ["Infantry", "Imperium", "Skitarii", "Adeptus Mechanicus"], "stats": {} },
+        { "id": "am_sicarian_ruststalkers", "name": "Sicarian Ruststalkers", "points": 165, "keywords": ["Infantry", "Imperium", "Skitarii", "Adeptus Mechanicus"], "stats": {} }
+    ],
+    "detachments": [
+        {
+            "id": "electromartyrs",
+            "name": "Electromartyrs",
+            "flavor_text": "When precious technoreliquaries must be protected or rare archeotech seized in shipboard battles, Tech-Priests quickly cast aside whatever restraint they may have had. Lesser underlings are expended without a care and perilous technologies unleashed in the quest for higher knowledge.",
+            "army_rule": {
+                "name": "Close-quarters Doctrinas",
+                "description": "Units from your army with the Doctrina Imperatives ability replace that ability with this one. At the start of the battle round, select one of the following weapon abilities: [ASSAULT]; [IGNORES COVER]; [PISTOL]. Until the end of the battle round, ranged weapons equipped by models from your army with this ability have that weapon ability.",
+                "replaces": "Doctrina Imperatives"
+            },
+            "detachment_rule": {
+                "name": "Overload Machine Spirits",
+                "description": "Each time an ADEPTUS MECHANICUS unit from your army is selected to shoot, it can use this ability. If it does, until the end of the phase, improve the Armour Penetration characteristic of ranged weapons equipped by models in that unit by 1 and those weapons have the [HAZARDOUS] ability."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders - Tech-Priests",
+                    "limit": 1,
+                    "allow_duplicates": false,
+                    "allowed_units": [
+                        "am_tp_dominus",
+                        "am_tp_enginseer",
+                        "am_tp_manipulus",
+                        "am_technoarcheologist"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders - Skitarii",
+                    "limit": 1,
+                    "allow_duplicates": false,
+                    "allowed_units": [
+                        "am_skitarii_marshal"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Troops",
+                    "limit_per_unit": 3,
+                    "allowed_units": [
+                        "am_skitarii_rangers",
+                        "am_skitarii_vanguard"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Elites",
+                    "limit_per_unit": 1,
+                    "allowed_units": [
+                        "am_corpuscarii",
+                        "am_fulgurite",
+                        "am_kataphron_breachers",
+                        "am_kataphron_destroyers",
+                        "am_sicarian_infiltrators",
+                        "am_sicarian_ruststalkers"
+                    ]
+                }
+            ],
+            "forming_squads": {
+                "cannot_split": [],
+                "split_penalties": []
+            },
+            "rules_adaptations": [
+                {
+                    "unit_id": "am_skitarii_rangers",
+                    "remove_ability": "Objective Scouted"
+                },
+                {
+                    "unit_id": "am_tp_dominus",
+                    "remove_ability": "Dataspike"
+                }
+            ],
+            "enhancements": [
+                {
+                    "name": "Remote Lockdown",
+                    "description": "Once per battle round, when an enemy unit attempts to operate a Hatchway, if that Hatchway is within 9\" of and visible to the bearer, it can use this Enhancement. If it does, it can attempt to prevent that unit from operating that Hatchway as if the bearer was within 1\" of that Hatchway."
+                },
+                {
+                    "name": "Multi-dimensional Auspex",
+                    "description": "Once per battle, in your Shooting phase, when the bearer is selected to shoot, it can use this Enhancement. If it does, until the end of the phase, it can ignore Walls and closed Hatchways for the purposes of determining visibility, and the Range characteristic of ranged weapons it is equipped with is changed to 6\"."
+                }
+            ],
+            "stratagems": [
+                {
+                    "name": "Auto-Vengeance",
+                    "cost": 1,
+                    "description": "Fight phase, just after an enemy unit has selected its targets. Target one ADEPTUS MECHANICUS unit from your army that was selected as the target of one or more of the attacking unit's attacks. Until the end of the phase, each time a model in your unit is destroyed, if that model has not fought this phase, roll one D6: on a 3+, do not remove it from play. That destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play."
+                },
+                {
+                    "name": "Ballistic Synchrony",
+                    "cost": 1,
+                    "description": "Your Shooting phase. Target one ADEPTUS MECHANICUS unit from your army that has not been selected to shoot this phase. Until the end of the phase, ranged weapons equipped by models in your unit have the [LETHAL HITS] ability."
+                },
+                {
+                    "name": "Omni-Targeters",
+                    "cost": 1,
+                    "description": "Your Shooting phase. Target one ADEPTUS MECHANICUS unit from your army that has not been selected to shoot this phase. Until the end of the phase, ranged weapons equipped by models in your unit have the [PISTOL] ability. If one or more of those weapons already have this ability, then until the end of the phase, each time an attack is made with such a weapon that targets a unit within 6\", add 1 to the Hit roll."
+                },
+                {
+                    "name": "Saviour Systems",
+                    "cost": 1,
+                    "description": "Your opponent's Shooting phase. Target one ADEPTUS MECHANICUS unit from your army (excluding KATAPHRON units) that was selected as the target of one or more of the attacking unit's attacks. Until the end of the phase, each time an attack targets your unit, subtract 1 from the Wound roll."
+                }
+            ]
+        },
+        {
+            "id": "response-clade",
+            "name": "Response Clade",
+            "flavor_text": "Just as white blood cells will defend a Human body, so the clades of Skitarii embedded on Adeptus Mechanicus vessels respond with systematic aggression to enemy intrusions. Once their own ship is secure, they are capable of counterboarding operations to destroy the threat at its source.",
+            "army_rule": {
+                "name": "Close-quarters Doctrinas",
+                "description": "Units from your army with the Doctrina Imperatives ability replace that ability with this one. At the start of the battle round, select one of the following weapon abilities: [ASSAULT]; [IGNORES COVER]; [PISTOL]. Until the end of the battle round, ranged weapons equipped by models from your army with this ability have that weapon ability.",
+                "replaces": "Doctrina Imperatives"
+            },
+            "detachment_rule": {
+                "name": "Procedural Elimination",
+                "description": "At the start of the battle round, select either melee attacks or ranged attacks. Until the end of the battle round, each time a SKITARII model from your army makes an attack of the selected type, re-roll a Hit roll of 1."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders - Skitarii",
+                    "limit": 2,
+                    "allow_duplicates": true,
+                    "allowed_units": [
+                        "am_skitarii_marshal"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Troops",
+                    "limit_per_unit": 3,
+                    "allowed_units": [
+                        "am_skitarii_rangers",
+                        "am_skitarii_vanguard"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Elites",
+                    "limit_per_unit": 1,
+                    "allowed_units": [
+                        "am_sicarian_infiltrators",
+                        "am_sicarian_ruststalkers"
+                    ]
+                }
+            ],
+            "forming_squads": {
+                "cannot_split": [],
+                "split_penalties": []
+            },
+            "rules_adaptations": [
+                {
+                    "unit_id": "am_skitarii_rangers",
+                    "remove_ability": "Objective Scouted"
+                }
+            ],
+            "enhancements": [
+                {
+                    "name": "Admonissor Shunt",
+                    "description": "Once per battle, at the start of any phase, if the bearer is on the battlefield, you can select one friendly SKITARII unit that is Battle-shocked. That unit is no longer Battle-shocked."
+                },
+                {
+                    "name": "Optimised Cogitators",
+                    "description": "Once per battle round, when you target the bearer with a Stratagem, that use of that Stratagem costs 1 less CP than normal."
+                }
+            ],
+            "stratagems": [
+                {
+                    "name": "Responsive Shielding",
+                    "cost": 1,
+                    "description": "Your opponent's Shooting phase or the Fight phase, just after an enemy unit has selected its targets. Target one SKITARII unit from your army that is within range of an objective marker and was selected as the target of one or more of the attacking unit's attacks. Until the end of the phase, models in your unit have a 4+ invulnerable save."
+                },
+                {
+                    "name": "Access Overrides",
+                    "cost": 1,
+                    "description": "Your Movement phase. Target one ADEPTUS MECHANICUS unit from your army that has not been selected to move this phase and is not within Engagement Range of one or more enemy units. Select one closed Hatchway within 1\" of your unit. Your unit can attempt to operate that Hatchway. Until the end of the turn, your unit cannot attempt to operate a Hatchway again."
+                },
+                {
+                    "name": "Precognitated Firefields",
+                    "cost": 1,
+                    "description": "Your Shooting phase. Target one SKITARII unit from your army that has not been selected to shoot this phase. Until the end of the phase, ranged weapons equipped by models in your unit have the [SUSTAINED HITS 1] ability. If your unit has the BATTLELINE keyword, those weapons have the [SUSTAINED HITS 2] ability instead."
+                },
+                {
+                    "name": "Integrative Withdrawal",
+                    "cost": 1,
+                    "description": "Your Shooting phase. Target one SKITARII unit from your army that has not been selected to shoot this phase. Until the end of the phase, your unit is eligible to shoot in a turn in which it Fell Back. In addition, after your unit has shot this phase, if it is within 1\" of an open Hatchway and is not within Engagement Range of one or more enemy units, you can close that Hatchway."
+                }
+            ]
+        },
+        {
+            "id": "machine-cult",
+            "name": "Machine Cult",
+            "flavor_text": "The voidships of the Adeptus Mechanicus are as much spacegoing temples to the Omnissiah as they are floating forges or esoteric warships. The teeming tech-clergy aboard such ships form zealous armies in their own right, responding with fanatical aggression to any foe.",
+            "army_rule": {
+                "name": "Close-quarters Doctrinas",
+                "description": "Units from your army with the Doctrina Imperatives ability replace that ability with this one. At the start of the battle round, select one of the following weapon abilities: [ASSAULT]; [IGNORES COVER]; [PISTOL]. Until the end of the battle round, ranged weapons equipped by models from your army with this ability have that weapon ability.",
+                "replaces": "Doctrina Imperatives"
+            },
+            "detachment_rule": {
+                "name": "Canticles of the Omnissiah",
+                "description": "Add 1 to Advance rolls, Charge rolls and Battle-shock tests taken for TECH-PRIEST and ELECTRO-PRIESTS units from your army."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders - Tech-Priests",
+                    "limit": 2,
+                    "allow_duplicates": false,
+                    "allowed_units": [
+                        "am_tp_dominus",
+                        "am_tp_enginseer",
+                        "am_tp_manipulus",
+                        "am_technoarcheologist"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Elites",
+                    "limit_per_unit": 1,
+                    "allowed_units": [
+                        "am_corpuscarii",
+                        "am_fulgurite",
+                        "am_kataphron_breachers",
+                        "am_kataphron_destroyers"
+                    ]
+                }
+            ],
+            "forming_squads": {
+                "cannot_split": [],
+                "split_penalties": []
+            },
+            "rules_adaptations": [
+                {
+                    "unit_id": "am_corpuscarii",
+                    "add_ability": "Secure Site Tactical Manoeuvre (as BATTLELINE)"
+                },
+                {
+                    "unit_id": "am_fulgurite",
+                    "add_ability": "Secure Site Tactical Manoeuvre (as BATTLELINE)"
+                },
+                {
+                    "unit_id": "am_tp_dominus",
+                    "remove_ability": "Dataspike"
+                }
+            ],
+            "enhancements": [
+                {
+                    "name": "Beseech the Machine Spirits",
+                    "description": "At the end of the Move Units step of your Movement phase, the bearer can attempt to operate a Hatchway that is visible to and within 9\" of it, instead of one within 1\". When doing so, if your opponent attempts to prevent it, add the bearer's Toughness characteristic to your result of the roll-off, instead of that of a friendly model within 1\" of that Hatchway."
+                },
+                {
+                    "name": "Harmonic Discordator",
+                    "description": "In the Battle-shock step of your opponent's Command phase, if an enemy unit that is below its Starting Strength is within 3\" of the bearer, that unit must take a Battle-shock test. If that enemy unit is also Below Half-strength, subtract 1 from that test. This Enhancement cannot cause a unit to take two Battle-shock tests in the same phase."
+                }
+            ],
+            "stratagems": [
+                {
+                    "name": "Electrogheist Visitations",
+                    "cost": 1,
+                    "description": "Your opponent's Shooting phase or the Fight phase, just after an enemy unit has selected its targets. Target one ELECTRO-PRIESTS unit from your army that was selected as the target of one or more of the attacking unit's attacks. Until the end of the phase, each time an attack targets your unit, if the attacking model is within 6\" of your unit, subtract 1 from the Hit roll."
+                },
+                {
+                    "name": "Omnissiah's Guidance",
+                    "cost": 1,
+                    "description": "Your Shooting phase. Target one ADEPTUS MECHANICUS unit from your army that has not been selected to shoot this phase. Until the end of the phase, models in your unit can ignore other models in their unit for the purposes of determining visibility."
+                },
+                {
+                    "name": "Power of the Motive Force",
+                    "cost": 1,
+                    "description": "Your Charge phase. Target one ELECTRO-PRIESTS unit from your army. Until the end of the phase, your unit is eligible to declare a charge in a turn in which it Advanced."
+                },
+                {
+                    "name": "Tether-Tendrils",
+                    "cost": 1,
+                    "description": "Your opponent's Movement phase, just after an enemy unit is selected to Fall Back. Target one TECH-PRIEST or ELECTRO-PRIESTS unit from your army that is within Engagement Range of that enemy unit. Until the end of the phase, when that enemy unit Falls Back, models in it must take Desperate Escape tests as if their unit was Battle-shocked. When doing so, if that enemy unit is also Battle-shocked by other means, subtract 1 from each of those Desperate Escape tests."
+                }
+            ]
+        }
+    ]
+}

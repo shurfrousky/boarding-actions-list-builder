@@ -1,0 +1,550 @@
+{
+    "id": "aeldari",
+    "name": "Aeldari",
+    "units": [
+        { "id": "ae_asurmen", "name": "Asurmen", "points": 135, "keywords": ["Infantry", "Character", "Imperium", "Aeldari", "Phoenix Lord"], "stats": {} },
+        { "id": "ae_autarch", "name": "Autarch", "points": 85, "keywords": ["Infantry", "Character", "Aeldari"], "stats": {} },
+        { "id": "ae_autarch_wayleaper", "name": "Autarch Wayleaper", "points": 80, "keywords": ["Infantry", "Character", "Aeldari"], "stats": {} },
+        { "id": "ae_baharroth", "name": "Baharroth", "points": 115, "keywords": ["Infantry", "Character", "Aeldari", "Phoenix Lord"], "stats": {} },
+        { "id": "ae_death_jester", "name": "Death Jester", "points": 90, "keywords": ["Infantry", "Character", "Aeldari", "Harlequins"], "stats": {} },
+        { "id": "ae_eldrad", "name": "Eldrad Ulthran", "points": 120, "keywords": ["Infantry", "Character", "Psyker", "Aeldari"], "stats": {} },
+        { "id": "ae_farseer", "name": "Farseer", "points": 70, "keywords": ["Infantry", "Character", "Psyker", "Aeldari"], "stats": {} },
+        { "id": "ae_fuegan", "name": "Fuegan", "points": 120, "keywords": ["Infantry", "Character", "Aeldari", "Phoenix Lord"], "stats": {} },
+        { "id": "ae_jain_zar", "name": "Jain Zar", "points": 120, "keywords": ["Infantry", "Character", "Aeldari", "Phoenix Lord"], "stats": {} },
+        { "id": "ae_maugan_ra", "name": "Maugan Ra", "points": 100, "keywords": ["Infantry", "Character", "Aeldari", "Phoenix Lord"], "stats": {} },
+        { "id": "ae_shadowseer", "name": "Shadowseer", "points": 60, "keywords": ["Infantry", "Character", "Psyker", "Aeldari", "Harlequins"], "stats": {} },
+        { "id": "ae_solitaire", "name": "Solitaire", "points": 115, "keywords": ["Infantry", "Character", "Aeldari", "Harlequins"], "stats": {} },
+        { "id": "ae_spiritseer", "name": "Spiritseer", "points": 65, "keywords": ["Infantry", "Character", "Psyker", "Aeldari"], "stats": {} },
+        { "id": "ae_troupe_master", "name": "Troupe Master", "points": 75, "keywords": ["Infantry", "Character", "Aeldari", "Harlequins"], "stats": {} },
+        { "id": "ae_warlock", "name": "Warlock", "points": 45, "keywords": ["Infantry", "Character", "Psyker", "Aeldari"], "stats": {} },
+        { "id": "ae_warlock_conclave_2", "name": "Warlock Conclave (2 models)", "points": 55, "keywords": ["Infantry", "Character", "Psyker", "Aeldari"], "stats": {} },
+        { "id": "ae_warlock_conclave_4", "name": "Warlock Conclave (4 models)", "points": 130, "keywords": ["Infantry", "Character", "Psyker", "Aeldari"], "stats": {} },
+        { "id": "ae_dark_reapers", "name": "Dark Reapers", "points": 195, "keywords": ["Infantry", "Aeldari", "Aspect Warrior"], "stats": {} },
+        { "id": "ae_dire_avengers", "name": "Dire Avengers", "points": 150, "keywords": ["Infantry", "Battleline", "Aeldari", "Aspect Warrior"], "stats": {} },
+        { "id": "ae_fire_dragons", "name": "Fire Dragons", "points": 240, "keywords": ["Infantry", "Aeldari", "Aspect Warrior"], "stats": {} },
+        { "id": "ae_guardian_defenders", "name": "Guardian Defenders", "points": 100, "keywords": ["Infantry", "Battleline", "Guardians", "Aeldari"], "stats": {} },
+        { "id": "ae_howling_banshees", "name": "Howling Banshees", "points": 190, "keywords": ["Infantry", "Aeldari", "Aspect Warrior"], "stats": {} },
+        { "id": "ae_storm_guardians", "name": "Storm Guardians", "points": 110, "keywords": ["Infantry", "Battleline", "Guardians", "Aeldari"], "stats": {} },
+        { "id": "ae_striking_scorpions", "name": "Striking Scorpions", "points": 150, "keywords": ["Infantry", "Aeldari", "Aspect Warrior"], "stats": {} },
+        { "id": "ae_swooping_hawks", "name": "Swooping Hawks", "points": 190, "keywords": ["Infantry", "Aeldari", "Aspect Warrior"], "stats": {} },
+        { "id": "ae_troupe_5", "name": "Troupe (5 models)", "points": 85, "keywords": ["Infantry", "Aeldari", "Harlequins"], "stats": {} },
+        { "id": "ae_troupe_6", "name": "Troupe (6 models)", "points": 100, "keywords": ["Infantry", "Aeldari", "Harlequins"], "stats": {} },
+        { "id": "ae_troupe_11", "name": "Troupe (11 models)", "points": 190, "keywords": ["Infantry", "Aeldari", "Harlequins"], "stats": {} },
+        { "id": "ae_warp_spiders", "name": "Warp Spiders", "points": 105, "keywords": ["Infantry", "Aeldari", "Aspect Warrior"], "stats": {} },
+        { "id": "ae_wraithblades", "name": "Wraithblades", "points": 150, "keywords": ["Infantry", "Wraith Construct", "Aeldari"], "stats": {} },
+        { "id": "ae_wraithguard", "name": "Wraithguard", "points": 160, "keywords": ["Infantry", "Wraith Construct", "Aeldari"], "stats": {} }
+    ],
+    "detachments": [
+        {
+            "id": "khaines-arrow",
+            "name": "Khaine's Arrow",
+            "flavor_text": "Honed to a single, perfect point, the Aeldari Aspect Warriors streak across the void of space aboard Vampire Raiders before plunging deep into the heart of the enemy ship. Perhaps they strike the bridge. Maybe they pierce the defences of the enginarium. Wherever they hit home, they bring doom to the foe.",
+            "army_rule": {
+                "name": "Seers' Guidance",
+                "description": "Units from your army with the Strands of Fate ability replace that ability with this one. Once per battle round, you can target one unit from your army with this ability with the Command Re-roll Stratagem for 0CP.",
+                "replaces": "Strands of Fate"
+            },
+            "detachment_rule": {
+                "name": "Unerring Strike",
+                "description": "In your Movement phase, each time an AELDARI unit from your army makes a Normal move, while making that move it can attempt to operate a closed Hatchway that is within 1\" of it at any point during that move, provided there are no enemy units within 1\" of that Hatchway. If that AELDARI unit does attempt to operate that Hatchway, reduce the distance each model in that unit can move this phase by 2\", and it cannot operate a Hatchway again this turn."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders",
+                    "limit": 1,
+                    "allow_duplicates": false,
+                    "allowed_units": [
+                        "ae_asurmen",
+                        "ae_autarch",
+                        "ae_autarch_wayleaper",
+                        "ae_baharroth",
+                        "ae_eldrad",
+                        "ae_farseer",
+                        "ae_fuegan",
+                        "ae_jain_zar",
+                        "ae_maugan_ra"
+                    ]
+                },
+                {
+                    "type": "conditional_dependency",
+                    "category_name": "Phoenix Lord Restriction",
+                    "error_message": "A PHOENIX LORD can only be included if you also include one of the units it can normally be attached to.",
+                    "dependent_units": [
+                        "ae_asurmen",
+                        "ae_baharroth",
+                        "ae_fuegan",
+                        "ae_jain_zar",
+                        "ae_maugan_ra"
+                    ],
+                    "condition": "each dependent unit requires at least one of its attachable units to be present"
+                },
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Support",
+                    "limit": 1,
+                    "allow_duplicates": false,
+                    "allowed_units": [
+                        "ae_warlock",
+                        "ae_warlock_conclave_2",
+                        "ae_warlock_conclave_4"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Aspect Warriors",
+                    "limit_per_unit": 1,
+                    "allowed_units": [
+                        "ae_dire_avengers",
+                        "ae_fire_dragons",
+                        "ae_howling_banshees",
+                        "ae_striking_scorpions"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Fast Attack",
+                    "limit": 1,
+                    "allow_duplicates": false,
+                    "allowed_units": [
+                        "ae_swooping_hawks",
+                        "ae_warp_spiders"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Heavy Support",
+                    "limit": 1,
+                    "allow_duplicates": false,
+                    "allowed_units": [
+                        "ae_dark_reapers"
+                    ]
+                }
+            ],
+            "forming_squads": {
+                "cannot_split": [],
+                "split_penalties": []
+            },
+            "rules_adaptations": [
+                {
+                    "unit_id": "ae_asurmen",
+                    "remove_ability": "Tactical Acumen"
+                },
+                {
+                    "unit_id": "ae_autarch_wayleaper",
+                    "remove_ability": "Deep Strike"
+                },
+                {
+                    "unit_id": "ae_baharroth",
+                    "remove_ability": "Cloudstrider"
+                },
+                {
+                    "unit_id": "ae_baharroth",
+                    "remove_ability": "Deep Strike"
+                },
+                {
+                    "unit_id": "ae_eldrad",
+                    "remove_ability": "Diviner of Futures"
+                },
+                {
+                    "unit_id": "ae_farseer",
+                    "remove_ability": "Branching Fates"
+                },
+                {
+                    "unit_id": "ae_jain_zar",
+                    "remove_ability": "Whirling Death"
+                },
+                {
+                    "unit_id": "ae_swooping_hawks",
+                    "remove_ability": "Skyleap"
+                },
+                {
+                    "unit_id": "ae_swooping_hawks",
+                    "remove_ability": "Deep Strike"
+                },
+                {
+                    "unit_id": "ae_warp_spiders",
+                    "remove_ability": "Flickerjump"
+                },
+                {
+                    "unit_id": "ae_warlock_conclave_2",
+                    "remove_ability": "Protect"
+                },
+                {
+                    "unit_id": "ae_warlock_conclave_4",
+                    "remove_ability": "Protect"
+                }
+            ],
+            "enhancements": [
+                {
+                    "name": "Runes of Sanctuary",
+                    "psychic": true,
+                    "description": "PSYKER model only. Once per turn, in your opponent's Shooting phase, when a friendly AELDARI unit within 9\" of and visible to the bearer is selected as the target of a ranged attack, the bearer can use this Enhancement. If it does, until the end of the phase, each time an attack targets that friendly AELDARI unit, worsen the Armour Penetration characteristic of that attack by 1."
+                },
+                {
+                    "name": "Shieldmaster",
+                    "description": "Once per turn, in your Movement phase, after the bearer has moved, you can close one open Hatchway it moved through this phase (this can be done in addition to operating a Hatchway using the Unerring Strike Detachment rule)."
+                }
+            ],
+            "stratagems": [
+                {
+                    "name": "Void Ghosts",
+                    "cost": 1,
+                    "description": "Your opponent's Shooting phase or the Fight phase, just after an enemy unit has selected its targets. Target one AELDARI unit from your army that was selected as the target of one or more of the attacking unit's attacks. Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll."
+                },
+                {
+                    "name": "Bladefocus",
+                    "cost": 1,
+                    "description": "Fight phase. Target one HOWLING BANSHEES or STRIKING SCORPIONS unit from your army that has not been selected to fight this phase. Until the end of the phase, each time a model in your unit makes an attack, if it made a Charge move this turn, you can re-roll the Hit roll."
+                },
+                {
+                    "name": "Critical Capture",
+                    "cost": 1,
+                    "description": "Your Command phase. Target one AELDARI unit from your army (excluding CHARACTER units). Until the start of your next Command phase, add 1 to the Objective Control characteristic of models in your unit. In addition, at the end of your turn, select one objective marker you control that your unit is within range of. That objective marker is Secured by your army."
+                },
+                {
+                    "name": "Focused Fusillade",
+                    "cost": 1,
+                    "description": "Your Shooting phase. Target one DIRE AVENGERS, FIRE DRAGONS, SWOOPING HAWKS or WARP SPIDERS unit from your army that has not been selected to shoot this phase. Until the end of the phase, each time a model in your unit makes an attack, add 1 to the Wound roll."
+                }
+            ]
+        },
+        {
+            "id": "protector-host",
+            "name": "Protector Host",
+            "flavor_text": "The Aeldari fight furiously to defend their irreplaceable voidships - doubly so if the conflict threatens one of their spacefaring craftworlds. In such a battle they deploy their full might without a second thought, citizen soldiery and Aspect Warriors alike rallying to defend that which is precious to them.",
+            "army_rule": {
+                "name": "Seers' Guidance",
+                "description": "Units from your army with the Strands of Fate ability replace that ability with this one. Once per battle round, you can target one unit from your army with this ability with the Command Re-roll Stratagem for 0CP.",
+                "replaces": "Strands of Fate"
+            },
+            "detachment_rule": {
+                "name": "Determined Defence",
+                "description": "Each time an attack targets a GUARDIANS or DIRE AVENGERS unit from your army, if that unit is within range of an objective marker, add 1 to any armour saving throw made against that attack."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders",
+                    "limit": 1,
+                    "allow_duplicates": false,
+                    "allowed_units": [
+                        "ae_autarch",
+                        "ae_eldrad",
+                        "ae_farseer"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Support",
+                    "limit": 1,
+                    "allow_duplicates": false,
+                    "allowed_units": [
+                        "ae_warlock",
+                        "ae_warlock_conclave_2",
+                        "ae_warlock_conclave_4"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Troops",
+                    "limit_per_unit": 3,
+                    "allowed_units": [
+                        "ae_guardian_defenders",
+                        "ae_storm_guardians"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Elites",
+                    "limit": 2,
+                    "allow_duplicates": true,
+                    "allowed_units": [
+                        "ae_dire_avengers"
+                    ]
+                }
+            ],
+            "forming_squads": {
+                "cannot_split": [],
+                "split_penalties": [],
+                "mandatory_splits": [
+                    {
+                        "unit_id": "ae_guardian_defenders",
+                        "squads": [
+                            {
+                                "size": 6,
+                                "note": "Includes Heavy Weapon Platform or Serpent's Scale Platform"
+                            },
+                            {
+                                "size": 5,
+                                "note": "Remaining models"
+                            }
+                        ]
+                    },
+                    {
+                        "unit_id": "ae_storm_guardians",
+                        "squads": [
+                            {
+                                "size": 6,
+                                "note": "Includes Heavy Weapon Platform or Serpent's Scale Platform"
+                            },
+                            {
+                                "size": 5,
+                                "note": "Remaining models"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "rules_adaptations": [
+                {
+                    "unit_id": "ae_eldrad",
+                    "remove_ability": "Diviner of Futures"
+                },
+                {
+                    "unit_id": "ae_farseer",
+                    "remove_ability": "Branching Fates"
+                },
+                {
+                    "unit_id": "ae_guardian_defenders",
+                    "remove_ability": "Defenders of Fate"
+                },
+                {
+                    "unit_id": "ae_storm_guardians",
+                    "remove_ability": "Stormblades"
+                },
+                {
+                    "unit_id": "ae_warlock_conclave_2",
+                    "remove_ability": "Protect"
+                },
+                {
+                    "unit_id": "ae_warlock_conclave_4",
+                    "remove_ability": "Protect"
+                }
+            ],
+            "enhancements": [
+                {
+                    "name": "Grace of Khaine",
+                    "description": "Each time the bearer makes an attack, re-roll a Hit roll of 1, re-roll a Wound roll of 1 and re-roll a Damage roll of 1."
+                },
+                {
+                    "name": "Rallying Cry",
+                    "description": "In the Deploy Armies step, when the bearer is set up in an Entry Zone, you can set up two friendly GUARDIANS units within that Entry Zone instead of any other units."
+                }
+            ],
+            "stratagems": [
+                {
+                    "name": "Void Ghosts",
+                    "cost": 1,
+                    "description": "Your opponent's Shooting phase or the Fight phase, just after an enemy unit has selected its targets. Target one AELDARI unit from your army that was selected as the target of one or more of the attacking unit's attacks. Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll."
+                },
+                {
+                    "name": "Shuriken Storm",
+                    "cost": 1,
+                    "description": "Your Shooting phase. Target one AELDARI unit from your army that has not been selected to shoot this phase. Until the end of the phase, add 1 to the Strength characteristic of Avenger shuriken catapults, shuriken catapults, shuriken pistols and shuriken cannons equipped by models in your unit."
+                },
+                {
+                    "name": "Shield of Blades",
+                    "cost": 1,
+                    "description": "Your opponent's Movement or Charge phase. Target one DIRE AVENGERS or GUARDIAN DEFENDERS unit from your army that has not fired Overwatch this phase. Until the end of the phase, each time a model in your unit makes an attack while firing Overwatch, an unmodified Hit roll of 5+ is required to score a hit, instead of an unmodified 6."
+                },
+                {
+                    "name": "Rapid Ambush",
+                    "cost": 1,
+                    "description": "Your opponent's Movement phase, just after an enemy unit opens a Hatchway. Target one DIRE AVENGERS or GUARDIANS unit from your army that has not fired Overwatch this phase and is wholly on the opposite side of that Hatchway from that enemy unit. If that enemy unit is within 9\" of and visible to your unit, roll one D6: on a 2-5, that enemy unit suffers 1 mortal wound; on a 6, that enemy unit suffers 2 mortal wounds. If that enemy unit suffers one or more mortal wounds in this way, your unit can then make a Normal move of up to D6\". Until the end of the turn, your unit cannot fire Overwatch."
+                }
+            ]
+        },
+        {
+            "id": "wraiths-of-the-void",
+            "name": "Wraiths of the Void",
+            "flavor_text": "When a void battle is sufficiently vital or desperate, the Aeldari awaken their wraith constructs. Resilient, powerful and utterly focused upon their duty, such ghost warriors are a force of unimaginable devastation amidst the close confines of a boarding battle.",
+            "army_rule": {
+                "name": "Seers' Guidance",
+                "description": "Units from your army with the Strands of Fate ability replace that ability with this one. Once per battle round, you can target one unit from your army with this ability with the Command Re-roll Stratagem for 0CP.",
+                "replaces": "Strands of Fate"
+            },
+            "detachment_rule": {
+                "name": "Wraith-Marked",
+                "description": "In your Command phase, you can select one AELDARI unit from your army within range of an objective marker you control. That unit must take a Leadership test, subtracting 2 from the result if it has the WRAITH CONSTRUCT keyword: if passed, that objective marker is Secured by your army."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders",
+                    "limit": 2,
+                    "allow_duplicates": true,
+                    "allowed_units": [
+                        "ae_spiritseer"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Wraith Constructs",
+                    "limit_per_unit": 2,
+                    "allowed_units": [
+                        "ae_wraithblades",
+                        "ae_wraithguard"
+                    ]
+                }
+            ],
+            "forming_squads": {
+                "cannot_split": [],
+                "split_penalties": []
+            },
+            "rules_adaptations": [
+                {
+                    "unit_id": "ae_spiritseer",
+                    "remove_ability": "Tears of Isha"
+                },
+                {
+                    "unit_id": "ae_wraithguard",
+                    "remove_ability": "War Construct"
+                }
+            ],
+            "enhancements": [
+                {
+                    "name": "Direct Guidance",
+                    "description": "At the end of your Movement phase, select one friendly WRAITH CONSTRUCT unit within 6\" of and visible to the bearer. Until the end of the turn, that WRAITH CONSTRUCT unit is eligible to shoot and declare a charge in a turn in which it Fell Back."
+                },
+                {
+                    "name": "Song of Renewal",
+                    "description": "In your Command phase, the bearer can use this Enhancement. If it does, select one friendly WRAITH CONSTRUCT unit within 6\" of and visible to the bearer. Return one destroyed model to that WRAITH CONSTRUCT unit with its full wounds remaining. The bearer can only use this Enhancement up to two times."
+                }
+            ],
+            "stratagems": [
+                {
+                    "name": "Guardian Constructs",
+                    "cost": 1,
+                    "description": "Fight phase, just after an enemy unit has selected its targets. Target one WRAITH CONSTRUCT unit from your army that was selected as the target of one or more of the attacking unit's attacks. Until the end of the phase, each time an attack targets your unit, if the attacking model is wholly on the opposite side of a Hatchway from your unit, subtract 1 from the Wound roll."
+                },
+                {
+                    "name": "Wraithsight",
+                    "cost": 1,
+                    "description": "Your Shooting phase. Target one AELDARI unit from your army that has not been selected to shoot this phase. Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. In addition, each time a model in your unit makes an attack, you can ignore any or all modifiers to that attack's Ballistic Skill characteristic and/or to the Hit roll."
+                },
+                {
+                    "name": "D-Strike",
+                    "cost": 1,
+                    "description": "Your Shooting phase. Target one WRAITH CONSTRUCT unit from your army that has not been selected to shoot this phase. Select one closed Hatchway that is visible to and within range of one or more of the ranged weapons equipped by models in your unit. Open that Hatchway and, until the end of the battle, that Hatchway cannot be closed. For each enemy unit within 3\" of that Hatchway and wholly on the opposite side of it from your unit, until the start of your next Shooting phase, that enemy unit is stunned. While a unit is stunned, each time a model in that unit makes an attack, subtract 1 from the Hit roll. Until the end of the phase, your unit is not eligible to shoot."
+                },
+                {
+                    "name": "Unflinching Fire",
+                    "cost": 1,
+                    "description": "Your opponent's Movement or Charge phase. Target one AELDARI unit from your army that has not fired Overwatch this phase. Until the end of the phase, each time a model in your unit makes an attack while firing Overwatch, an unmodified Hit roll of 5+ is required to score a hit, instead of an unmodified 6."
+                }
+            ]
+        },
+        {
+            "id": "star-dancer-masque",
+            "name": "Star-dancer Masque",
+            "flavor_text": "When Harlequins board an enemy ship they follow Saedath that cast them in the roles of void-soaring mythic hawks and serpents, or else the heroes Ulthanash and Eldanesh raiding the stronghold of some monstrous foe. They flow through the steps with blistering speed, laying low all who oppose them.",
+            "army_rule": {
+                "name": "Seers' Guidance",
+                "description": "Units from your army with the Strands of Fate ability replace that ability with this one. Once per battle round, you can target one unit from your army with this ability with the Command Re-roll Stratagem for 0CP.",
+                "replaces": "Strands of Fate"
+            },
+            "detachment_rule": {
+                "name": "Faolchu's Last Flight",
+                "description": "Each time an AELDARI model from your army is destroyed by a melee attack, if it has not fought this phase, roll one D6: on a 3+, do not remove it from play. The destroyed model can fight after the attacking model's unit has finished making its attacks, and is then removed from play."
+            },
+            "mustering_rules": [
+                {
+                    "type": "select_up_to_x",
+                    "category_name": "Leaders",
+                    "limit": 2,
+                    "allow_duplicates": false,
+                    "allowed_units": [
+                        "ae_death_jester",
+                        "ae_shadowseer",
+                        "ae_troupe_master"
+                    ]
+                },
+                {
+                    "type": "conditional_select",
+                    "category_name": "Solitaire",
+                    "limit": 1,
+                    "condition": "Only if you do not include any other CHARACTER models",
+                    "allowed_units": [
+                        "ae_solitaire"
+                    ]
+                },
+                {
+                    "type": "select_up_to_x_each",
+                    "category_name": "Troops",
+                    "limit_per_unit": 3,
+                    "allowed_units": [
+                        "ae_troupe_5",
+                        "ae_troupe_6",
+                        "ae_troupe_11"
+                    ]
+                }
+            ],
+            "forming_squads": {
+                "cannot_split": [],
+                "split_penalties": [],
+                "mandatory_splits": [
+                    {
+                        "unit_id": "ae_troupe_11",
+                        "squads": [
+                            {
+                                "size": 6,
+                                "note": "First boarding squad"
+                            },
+                            {
+                                "size": 5,
+                                "note": "Remaining models"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "rules_adaptations": [
+                {
+                    "unit_id": "ae_solitaire",
+                    "remove_ability": "Blitz"
+                },
+                {
+                    "unit_id": "ae_solitaire",
+                    "remove_ability": "Blur of Movement"
+                },
+                {
+                    "unit_id": "ae_troupe_master",
+                    "remove_ability": "Cegorach's Favour"
+                }
+            ],
+            "enhancements": [
+                {
+                    "name": "Prismatic Garb",
+                    "description": "Enemy units cannot fire Overwatch at the bearer."
+                },
+                {
+                    "name": "Path of Eldanesh",
+                    "description": "The bearer has the Fights First ability and, each time the bearer opens a Hatchway, until the end of the turn, improve the Armour Penetration characteristic of melee weapons equipped by the bearer by 1."
+                }
+            ],
+            "stratagems": [
+                {
+                    "name": "Void Ghosts",
+                    "cost": 1,
+                    "description": "Your opponent's Shooting phase or the Fight phase, just after an enemy unit has selected its targets. Target one AELDARI unit from your army that was selected as the target of one or more of the attacking unit's attacks. Until the end of the phase, each time an attack targets your unit, subtract 1 from the Hit roll."
+                },
+                {
+                    "name": "Darting Strikes",
+                    "cost": 1,
+                    "description": "Fight phase. Target one AELDARI unit from your army that has not been selected to fight this phase. Until the end of the phase, each time a model in your unit makes an attack, you can re-roll the Wound roll."
+                },
+                {
+                    "name": "Serpent Strike",
+                    "cost": 1,
+                    "description": "Fight phase, just after an AELDARI unit from your army destroys an enemy unit. Target that AELDARI unit. Until the end of the phase, each time your unit makes a Consolidation move, it can move up to D3+3\" instead of up to 3\" and, if it cannot end that move within Engagement Range of one or more enemy units that are visible to it (and in Unit Coherency), it can still make that Consolidation move, and when doing so can move in any direction."
+                },
+                {
+                    "name": "Acrobatic Leaps",
+                    "cost": 1,
+                    "description": "Your Movement phase. Target one AELDARI unit from your army that has not been selected to move this phase. Until the end of the phase, Desperate Escape tests taken for models in your unit are automatically passed, and each time your unit makes a Normal, Advance or Fall Back move, models in your unit can move through other models as if they were not there."
+                }
+            ]
+        }
+    ]
+}
